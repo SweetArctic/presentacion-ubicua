@@ -41,7 +41,7 @@ body,html,#root{height:100%;margin:0;font-family:'Inter',system-ui,-apple-system
 .sidebar{position:fixed;right:-360px;top:90px;width:340px;height:calc(100% - 140px);background:linear-gradient(180deg,var(--glass),rgba(255,255,255,0.95));backdrop-filter:blur(6px);box-shadow:var(--shadow);border-radius:12px;padding:16px;transition:all .35s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;gap:12px;z-index:40}
 .sidebar.open{right:28px}
 .sidebar-header{display:flex;justify-content:space-between;align-items:center}
-.sidebar-header h4{margin:0}
+.sidebar-header h4{margin:0;}
 .sidebar-header .close{background:transparent;border:none;font-size:20px;cursor:pointer}
 .slide-list{display:flex;flex-direction:column;gap:8px;overflow:auto;padding-right:6px}
 .slide-link{display:flex;align-items:center;gap:10px;border-radius:10px;padding:8px;border:none;background:transparent;text-align:left;cursor:pointer}
@@ -83,93 +83,132 @@ body,html,#root{height:100%;margin:0;font-family:'Inter',system-ui,-apple-system
 
 /* Modo oscuro */
 
-/* Tema oscuro */
+/* --- Reajuste total del modo oscuro --- */
+
 body.dark {
-  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(180deg, #0b1120 0%, #1e293b 100%);
   color: #f1f5f9;
 }
 
+/* Header */
 body.dark .app-header {
-  background: #1e293b;
-  border-bottom: 1px solid #334155;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+  background: #111827;
+  border-bottom: 1px solid #1e293b;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.6);
 }
-
 body.dark .app-header h1 {
-  color: #e2e8f0;
+  color: #f9fafb;
 }
 body.dark .muted {
-  color: #94a3b8;
+  color: #9ca3af;
 }
 
+/* Botones */
 body.dark .ghost {
-  color: #38bdf8;
+  color: #93c5fd;
 }
 body.dark .ghost:hover {
-  background: rgba(56,189,248,0.1);
+  background: rgba(147,197,253,0.12);
 }
-
 body.dark .primary {
-  background: linear-gradient(90deg,#38bdf8,#2563eb);
-  box-shadow: 0 0 12px rgba(37,99,235,0.6);
+  background: linear-gradient(90deg,#3b82f6,#2563eb);
+  box-shadow: 0 0 12px rgba(59,130,246,0.5);
 }
-
-body.dark .slide {
-  background: #1e293b;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.6);
-}
-body.dark .slide-head h2 {
-  color: #f8fafc;
-}
-body.dark .subtitle {
-  color: #94a3b8;
-}
-body.dark .slide-body {
-  color: #e2e8f0;
-}
-
 body.dark .secondary {
-  border-color: #38bdf8;
-  color: #38bdf8;
+  border-color: #60a5fa;
+  color: #60a5fa;
 }
 body.dark .secondary:hover {
-  background: rgba(56,189,248,0.1);
+  background: rgba(96,165,250,0.12);
 }
 
+/* Slide principal */
+body.dark .slide {
+  background: #1e293b;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.7);
+}
+body.dark .slide-head h2 {
+  color: #f9fafb;
+}
+body.dark .subtitle {
+  color: #9ca3af;
+}
+body.dark .slide-body {
+  color: #e5e7eb;
+}
+
+/* Sidebar */
 body.dark .sidebar {
-  background: rgba(30,41,59,0.95);
-  border: 1px solid #334155;
+  background: #111827;
+  border: 1px solid #1f2937;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+}
+body.dark .slide-link:hover {
+  background: rgba(59,130,246,0.1);
 }
 body.dark .slide-link .num {
-  background: #0ea5e9;
+  background: #3b82f6;
   color: white;
 }
 body.dark .slide-link.active {
-  outline-color: #38bdf8;
+  outline-color: #2563eb;
+  background: rgba(37,99,235,0.15);
+}
+body.dark .slide-link .title {
+  color: #f9fafb;
+}
+body.dark .slide-link .sub {
+  color: #9ca3af;
+}
+
+/* Fuentes en sidebar */
+body.dark .sidebar-sources {
+  background: #1f2937;
+  border-radius: 8px;
+  padding: 10px;
+}
+body.dark .sidebar-sources h5 {
+  color: #e5e7eb;
 }
 body.dark .sidebar-sources a {
-  color: #38bdf8;
+  color: #60a5fa;
+}
+body.dark .sidebar-sources a:hover {
+  text-decoration: underline;
+  color: #93c5fd;
 }
 
+/* Pantalla de detalle */
 body.dark .detail-screen {
-  background: #1e293b;
-  color: #f1f5f9;
+  background: #111827;
+  color: #f9fafb;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.8);
+}
+body.dark .detail-top h2 {
+  color: #f9fafb;
 }
 body.dark .back-btn {
-  color: #94a3b8;
+  color: #9ca3af;
 }
 body.dark .detail-sources {
-  border-top-color: #334155;
+  border-top: 1px dashed #374151;
+}
+body.dark .detail-sources h4 {
+  color: #e5e7eb;
+}
+body.dark .detail-sources a {
+  color: #60a5fa;
 }
 
+/* Footer */
 body.dark .app-footer {
-  border-top: 1px solid #334155;
+  border-top: 1px solid #1e293b;
 }
 body.dark .progress {
-  background: #334155;
+  background: #374151;
 }
 body.dark .bar {
-  background: linear-gradient(90deg,#38bdf8,#2563eb);
+  background: linear-gradient(90deg,#3b82f6,#2563eb);
 }
 
 /* Botónes animados */
