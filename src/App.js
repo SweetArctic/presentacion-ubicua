@@ -1,6 +1,6 @@
-// src/App.jsx actualizado para usar iconos sun.svg y moon.svg animados
 import React, { useState, useRef, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import slides from "./slides";
 import DetailScreen from "./DetailScreen";
 import "./styles.css";
@@ -11,6 +11,7 @@ export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const sidebarPrevState = useRef(false);
+  const navigate = useNavigate();
 
   const slide = slides[index];
 
@@ -42,13 +43,24 @@ export default function App() {
       <header className="app-header">
         <div>
           <h1>Computación Ubicua</h1>
-          <p className="muted">Diapositiva {index + 1} / {slides.length}</p>
+          <p className="muted">
+            Diapositiva {index + 1} / {slides.length}
+          </p>
         </div>
 
         <div className="header-actions">
-          <button onClick={() => setSidebarOpen((s) => !s)} className="ghost">
+          <button
+            onClick={() => setSidebarOpen((s) => !s)}
+            className="ghost"
+          >
             Fuentes
           </button>
+
+          {/* Botón que lleva a la intro */}
+          <button onClick={() => navigate("/intro")} className="ghost">
+            Presentación
+          </button>
+
           <motion.button
             onClick={() => setDarkMode((d) => !d)}
             className="ghost icon-btn"
@@ -61,9 +73,16 @@ export default function App() {
               className="icon-img"
             />
           </motion.button>
-          <button onClick={() => setIndex(0)} className="ghost">Inicio</button>
-          <button onClick={prev} className="ghost">Anterior</button>
-          <button onClick={next} className="primary">Siguiente</button>
+
+          <button onClick={() => setIndex(0)} className="ghost">
+            Inicio
+          </button>
+          <button onClick={prev} className="ghost">
+            Anterior
+          </button>
+          <button onClick={next} className="primary">
+            Siguiente
+          </button>
         </div>
       </header>
 
@@ -80,15 +99,21 @@ export default function App() {
             >
               <div className="slide-head">
                 <h2>{slide.title}</h2>
-                {slide.subtitle && <p className="subtitle">{slide.subtitle}</p>}
+                {slide.subtitle && (
+                  <p className="subtitle">{slide.subtitle}</p>
+                )}
               </div>
 
               <section className="slide-body">{slide.body}</section>
 
               <div className="slide-actions">
-                <button className="secondary" onClick={openDetail}>Ver más</button>
+                <button className="secondary" onClick={openDetail}>
+                  Ver más
+                </button>
                 <div className="pager">
-                  <button onClick={() => setIndex(0)} className="ghost">⤴ Inicio</button>
+                  <button onClick={() => setIndex(0)} className="ghost">
+                    ⤴ Inicio
+                  </button>
                 </div>
               </div>
             </motion.article>
@@ -106,7 +131,12 @@ export default function App() {
         <aside className={`sidebar ${sidebarOpen ? "open" : ""}`}>
           <div className="sidebar-header">
             <h4>Diapositivas</h4>
-            <button className="close" onClick={() => setSidebarOpen(false)}>×</button>
+            <button
+              className="close"
+              onClick={() => setSidebarOpen(false)}
+            >
+              ×
+            </button>
           </div>
 
           <nav className="slide-list">
@@ -131,7 +161,13 @@ export default function App() {
               {slide.sources && slide.sources.length > 0 ? (
                 slide.sources.map((src, i) => (
                   <li key={i}>
-                    <a href={src.href} target="_blank" rel="noreferrer">{src.label}</a>
+                    <a
+                      href={src.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {src.label}
+                    </a>
                   </li>
                 ))
               ) : (
@@ -144,7 +180,12 @@ export default function App() {
 
       <footer className="app-footer">
         <div className="progress">
-          <div className="bar" style={{ width: `${((index + 1) / slides.length) * 100}%` }} />
+          <div
+            className="bar"
+            style={{
+              width: `${((index + 1) / slides.length) * 100}%`,
+            }}
+          />
         </div>
       </footer>
     </div>
