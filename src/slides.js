@@ -170,6 +170,27 @@ const slides = [
     ),
     sources: [],
   },
+
+    {
+    id: "conclusion",
+    title: "Conclusión",
+    subtitle: "Cierre y preguntas",
+    body: (
+      <>
+        <p>
+          La computación ubicua es poderosa pero exige resolver privacidad,
+          seguridad y gobernanza tecnológica.
+        </p>
+      </>
+    ),
+    detailTitle: "Cierre",
+    detailBody: (
+      <>
+        <p>Proporciona una pregunta para discusión y caminos de investigación.</p>
+      </>
+    ),
+    sources: [],
+  },
 ];
 
 export default slides;
