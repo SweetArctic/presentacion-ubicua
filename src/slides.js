@@ -136,7 +136,7 @@ const slides = [
         y limitaciones según el entorno donde se utilicen.
       </p>
 
-      <h3 style={{ marginTop: "1rem" }}>📶 Comparativa de bandas:</h3>
+      <h3 style={{ marginTop: "1rem" }}>Comparativa de bandas:</h3>
       <table
         style={{
           width: "100%",
