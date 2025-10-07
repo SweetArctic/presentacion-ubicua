@@ -43,7 +43,7 @@ const slides = [
         src="/img/intro.jpg"
         alt="Introducción a las conexiones inalámbricas"
         style={{
-          width: "20%",
+          width: "40%",
           marginTop: "1rem",
           borderRadius: "8px",
           boxShadow: "0 0 10px rgba(0,0,0,0.25)",
@@ -115,6 +115,103 @@ const slides = [
     </p>
   ),
 },
+
+{
+  id: "wifi_tipos",
+  title: "WiFi y sus Bandas de Frecuencia",
+  subtitle: "Diferencias entre 2.4 GHz y 5 GHz",
+  color: 1,
+  body: (
+    <div style={{ borderTop: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
+      <p>
+        El <strong>WiFi</strong> es una de las tecnologías de conexión inalámbrica más utilizadas
+        en el mundo. Permite la transmisión de datos a alta velocidad sin necesidad de cables,
+        conectando dispositivos como computadoras, teléfonos, sensores IoT y cámaras de seguridad
+        a una red local o a Internet.
+      </p>
+
+      <p>
+        Existen diferentes <strong>bandas de frecuencia</strong> en las que opera el WiFi, siendo
+        las más comunes <strong>2.4 GHz</strong> y <strong>5 GHz</strong>. Ambas presentan ventajas
+        y limitaciones según el entorno donde se utilicen.
+      </p>
+
+      <h3 style={{ marginTop: "1rem" }}>📶 Comparativa de bandas:</h3>
+      <table
+        style={{
+          width: "100%",
+          borderCollapse: "collapse",
+          marginTop: "0.5rem",
+          fontSize: "0.95rem",
+        }}
+      >
+        <thead>
+          <tr style={{ backgroundColor: "#f2f2f2" }}>
+            <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Característica</th>
+            <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>WiFi 2.4 GHz</th>
+            <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>WiFi 5 GHz</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Velocidad</td>
+            <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Moderada</td>
+            <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Alta</td>
+          </tr>
+          <tr>
+            <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Alcance</td>
+            <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Mayor cobertura</td>
+            <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Menor cobertura</td>
+          </tr>
+          <tr>
+            <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Interferencias</td>
+            <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Más propensa</td>
+            <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Más estable</td>
+          </tr>
+          <tr>
+            <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Uso típico</td>
+            <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>
+              Hogares, oficinas pequeñas
+            </td>
+            <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>
+              Streaming, gaming, empresas
+            </td>
+          </tr>
+          <tr>
+            <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Penetración de muros</td>
+            <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Alta</td>
+            <td style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Baja</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style={{ marginTop: "1rem" }}>
+        En general, la banda de <strong>2.4 GHz</strong> es más adecuada para conexiones estables y
+        de largo alcance, mientras que <strong>5 GHz</strong> ofrece mayor velocidad y menor
+        interferencia en distancias cortas. Muchos routers modernos usan ambas bandas
+        simultáneamente, ofreciendo redes “dual band”.
+      </p>
+
+      <img
+        src="/img/wifi.png"
+        alt="Comparación de bandas WiFi 2.4 y 5 GHz"
+        style={{
+          width: "70%",
+          marginTop: "1rem",
+          borderRadius: "8px",
+          boxShadow: "0 0 10px rgba(0,0,0,0.25)",
+        }}
+      />
+    </div>
+  ),
+  detailBody: (
+    <p>
+      El WiFi opera principalmente en bandas de 2.4 GHz y 5 GHz. La primera ofrece más alcance; la
+      segunda, mayor velocidad y estabilidad.
+    </p>
+  ),
+},
+
 
 {
   id: "rfid_frecuencias",
