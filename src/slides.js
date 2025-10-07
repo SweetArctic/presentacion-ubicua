@@ -212,6 +212,64 @@ const slides = [
   ),
 },
 
+{
+  id: "intro_rfid",
+  title: "Introducción a la Tecnología RFID",
+  subtitle: "Identificación por radiofrecuencia",
+  color: 2,
+  body: (
+    <div style={{ borderTop: `2px solid ${slideColors.color1}`, paddingBottom: "0.5rem" }}>
+      <p>
+        La <strong>tecnología RFID</strong> (Radio Frequency Identification) permite identificar
+        objetos, personas o animales de manera automática mediante el uso de ondas de radio. 
+        Es una herramienta fundamental en la automatización moderna, el control de acceso y 
+        los sistemas de registro inteligentes.
+      </p>
+
+      <p>
+        Un sistema RFID está compuesto principalmente por tres elementos:
+      </p>
+
+      <ul style={{ marginTop: "1rem", lineHeight: "1.8" }}>
+        <li>
+          <strong>Etiqueta (Tag):</strong> contiene un microchip con un código único que
+          identifica el objeto o persona.
+        </li>
+        <li>
+          <strong>Lector (Reader):</strong> emite una señal de radio que activa la etiqueta y 
+          recibe la información que esta transmite.
+        </li>
+        <li>
+          <strong>Sistema de procesamiento:</strong> interpreta los datos recibidos y los envía 
+          a una base de datos o aplicación.
+        </li>
+      </ul>
+
+      <p>
+        A diferencia de los códigos de barras, RFID no requiere contacto visual directo, lo que 
+        lo hace ideal para entornos donde se necesita rapidez, precisión y trazabilidad, como la 
+        logística, la seguridad o los sistemas de asistencia estudiantil.
+      </p>
+
+      <img
+        src="/img/rfid-intro.png"
+        alt="Introducción a la tecnología RFID"
+        style={{
+          width: "20%",
+          marginTop: "1rem",
+          borderRadius: "8px",
+        }}
+      />
+    </div>
+  ),
+  detailBody: (
+    <p>
+      RFID identifica objetos mediante ondas de radio sin contacto físico, combinando etiquetas,
+      lectores y un sistema de gestión de datos.
+    </p>
+  ),
+},
+
 
 {
   id: "rfid_frecuencias",
