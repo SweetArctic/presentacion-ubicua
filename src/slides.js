@@ -873,7 +873,7 @@ const slides = [
         <img
           src="/img/topologias-bluetooth.jpeg"
           alt="Topologías Bluetooth"
-          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+          style={{ width: "100%", marginTop: "1rem", borderRadius: "8px" }}
         />
       </div>
     ),
