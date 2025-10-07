@@ -28,9 +28,9 @@ const slides = [
       </p>
 
       <ul style={{ marginTop: "1rem", lineHeight: "1.8" }}>
-        <li>📡 Transmisión de datos por ondas de radio, microondas o infrarrojo.</li>
-        <li>🔗 Conectividad entre personas, máquinas y sistemas inteligentes.</li>
-        <li>🌍 Aplicaciones en telecomunicaciones, IoT, salud, educación y transporte.</li>
+        <li>Transmisión de datos por ondas de radio, microondas o infrarrojo.</li>
+        <li>Conectividad entre personas, máquinas y sistemas inteligentes.</li>
+        <li>Aplicaciones en telecomunicaciones, IoT, salud, educación y transporte.</li>
       </ul>
 
       <p>
