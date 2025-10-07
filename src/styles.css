@@ -85,6 +85,25 @@ body::-webkit-scrollbar {
   bottom: 0;
 }
 
+/* === Logo Styles === */
+.logo {
+  width: 42px;
+  height: 42px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Modo oscuro: mejora el contraste */
+body.dark .logo {
+  filter: brightness(1.2);
+}
+body.dark .logo:hover {
+  filter: brightness(1.4);
+}
+
 /* --- Botones --- */
 button {
   border: none;

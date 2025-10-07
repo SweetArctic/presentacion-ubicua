@@ -41,7 +41,11 @@ export default function App() {
     <div className="app">
       <header className="app-header">
         <div className="header-brand">
-          <img src="/logo192.png" alt="logo" className="logo" />
+          <img
+            src={darkMode ? "/img/logo-dark.svg" : "/img/logo.svg"}
+            alt="logo"
+            className="logo"
+          />
           <h1>Computación Ubicua</h1>
           <p className="muted">
             Diapositiva {index + 1} / {slides.length}

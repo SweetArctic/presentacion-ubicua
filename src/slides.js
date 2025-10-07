@@ -543,7 +543,7 @@ const slides = [
     subtitle: "Identificación y conectividad inteligente",
     color: 2,
     body: (
-      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+      <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
         <h3>RFID (Identificación por Radiofrecuencia)</h3>
         <ul>
           <li>Tecnología que identifica objetos mediante ondas de radio sin contacto físico.</li>
@@ -573,7 +573,7 @@ const slides = [
     subtitle: "Control eficiente basado en RFID e IoT",
     color: 2,
     body: (
-      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+      <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
         <h3>Arquitectura del Sistema</h3>
         <p>
           Tarjeta RFID → Lector → ESP32 → WiFi → Servidor/Base de datos → App Móvil
@@ -606,7 +606,7 @@ const slides = [
     subtitle: "El futuro de la conectividad y los sistemas inteligentes",
     color: 2,
     body: (
-      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+      <div style={{ borderTop: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
         <p>
           Las conexiones inalámbricas representan uno de los pilares fundamentales del desarrollo
           tecnológico contemporáneo. Gracias a ellas, la comunicación, la automatización y la
