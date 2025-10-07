@@ -6,11 +6,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-weight: 800;
+  color: #f4f4f4;
+  font-weight: 700;
   font-size: 2em;
   will-change: transform, opacity;
-  text-shadow: 0px 2px 40px #00000020, 0px 2px 5px #00000030;
+  text-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
   -webkit-user-select: none;
   user-select: none;
   padding: 2rem;
@@ -22,18 +22,20 @@
 }
 
 .startBtn {
-  background: linear-gradient(90deg, #38bdf8, #2563eb);
+  background: linear-gradient(90deg, #1e3a8a, #0f172a);
   border: none;
   padding: 1rem 2rem;
-  border-radius: 12px;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 700;
+  border-radius: 10px;
+  color: #f9fafb;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .startBtn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #1e40af, #111827);
+  box-shadow: 0 0 16px rgba(30, 58, 138, 0.4);
 }

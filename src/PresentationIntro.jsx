@@ -1,8 +1,7 @@
-import React, { useState, CSSProperties, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   useTransition,
   animated,
-  AnimatedProps,
   useSpringRef,
 } from "@react-spring/web";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +10,13 @@ import styles from "./presentationIntro.module.css";
 const pages = [
   // Página A: Integrantes
   ({ style }) => (
-    <animated.div style={{ ...style, background: "lightpink" }}>
+    <animated.div
+      style={{
+        ...style,
+        background: "linear-gradient(135deg, #f3f4f6, #d1d5db)", // gris claro profesional
+        color: "#1f2937", // texto gris oscuro
+      }}
+    >
       <div className={styles.content}>
         <h2>Integrantes</h2>
         <ul>
@@ -25,7 +30,13 @@ const pages = [
 
   // Página B: Tema e introducción
   ({ style }) => (
-    <animated.div style={{ ...style, background: "lightblue" }}>
+    <animated.div
+      style={{
+        ...style,
+        background: "linear-gradient(135deg, #e2e8f0, #cbd5e1)", // gris azulado elegante
+        color: "#0f172a", // azul petróleo oscuro
+      }}
+    >
       <div className={styles.content}>
         <h2>Tema</h2>
         <p>Computación Ubicua</p>
@@ -43,7 +54,13 @@ const pages = [
   ({ style }) => {
     const navigate = useNavigate();
     return (
-      <animated.div style={{ ...style, background: "lightgreen" }}>
+      <animated.div
+        style={{
+          ...style,
+          background: "linear-gradient(135deg, #e5e7eb, #9ca3af)", // gris sobrio
+          color: "#111827",
+        }}
+      >
         <button className={styles.startBtn} onClick={() => navigate("/app")}>
           Iniciar Presentación
         </button>
