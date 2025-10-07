@@ -40,7 +40,8 @@ export default function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <div>
+        <div className="header-brand">
+          <img src="/logo192.png" alt="logo" className="logo" />
           <h1>Computación Ubicua</h1>
           <p className="muted">
             Diapositiva {index + 1} / {slides.length}
@@ -106,9 +107,9 @@ export default function App() {
               <section className="slide-body">{slide.body}</section>
 
               <div className="slide-actions">
-                <button className="secondary" onClick={openDetail}>
+                {/* <button className="secondary" onClick={openDetail}>
                   Ver más
-                </button>
+                </button> */}
                 <div className="pager">
                   <button onClick={() => setIndex(0)} className="ghost">
                     ⤴ Inicio

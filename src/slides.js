@@ -1,425 +1,638 @@
 // src/slides.js
 
 const slideColors = {
-  color1: "#2ECC71", // Juan José (verde)
-  color2: "#2768F5", // Danilo (azul)
-  color3: "#FFA500", // Juan Fernando (naranja)
+  color1: "#2ECC71",
+  color2: "#2768F5", // Azul (tema general)
+  color3: "#FFA500",
 };
 
 const slides = [
-  // --- Introducción general ---
   {
-    id: "intro",
-    title: "Conexiones inalámbricas",
-    subtitle: "Origen, evolución y propósito",
-    color: 3,
+    id: "arbol_decision",
+    title: "Árbol de decisión en sistemas IoT",
+    subtitle: "Selección de tecnologías y protocolos adecuados",
+    color: 2,
     body: (
-      <div style={{ borderBottom: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
+      <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
         <p>
-          Las conexiones inalámbricas surgieron de la necesidad humana de comunicarse y
-          transmitir información sin la limitación de cables físicos. Desde los primeros
-          experimentos de telegrafía sin hilos hasta la era moderna del Internet de las Cosas,
-          su evolución ha transformado por completo la interacción tecnológica.
+          Un árbol de decisión permite determinar qué tecnología IoT implementar según variables
+          como el rango de comunicación, el consumo energético, el costo y la infraestructura
+          disponible. Este enfoque metodológico guía el diseño de redes inalámbricas eficientes
+          y sostenibles.
         </p>
         <ul>
-          <li>Reducción de la dependencia de infraestructura física.</li>
-          <li>Movilidad y acceso ubicuo a la información.</li>
-          <li>Interconexión global de personas y dispositivos.</li>
+          <li>Facilita la comparación objetiva entre opciones tecnológicas.</li>
+          <li>Reduce errores de planificación en proyectos de IoT.</li>
+          <li>Integra factores técnicos, económicos y ambientales.</li>
         </ul>
-      </div>
-    ),
-    detailBody: (
-      <>
         <p>
-          La comunicación inalámbrica se basa en la transmisión de ondas electromagnéticas,
-          permitiendo enviar información por el aire. Su desarrollo se impulsó por la necesidad
-          militar, la expansión de las telecomunicaciones y, más recientemente, por la demanda
-          de conectividad universal.
+          En la práctica, cada nodo del árbol representa una decisión técnica, como el tipo de
+          red, el protocolo de enlace o la frecuencia de operación. Esto es esencial para el
+          desarrollo de soluciones escalables y optimizadas.
         </p>
         <img
-          src="/img/comparativas.jpeg"
-          alt="Comparativas de tecnologías inalámbricas"
+          src="/img/arbol-de-decision.jpeg"
+          alt="Árbol de decisión IoT"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
-      </>
-    ),
-    sources: [
-      { label: "IEEE History Center", href: "https://ethw.org/Wireless_Communication" }
-    ],
-  },
-
-  // --- Juan José ---
-  {
-    id: "rfid_iot",
-    title: "RFID e Internet de las Cosas (IoT)",
-    subtitle: "Identificación y conectividad inteligente",
-    color: 1,
-    body: (
-      <div style={{ borderBottom: `2px solid ${slideColors.color1}`, paddingBottom: "0.5rem" }}>
-        <p>
-          RFID (Identificación por Radiofrecuencia) y IoT (Internet de las Cosas) se combinan
-          para crear sistemas automatizados capaces de registrar y procesar datos en tiempo real.
-        </p>
-        <ul>
-          <li>RFID identifica objetos mediante ondas de radio sin contacto físico.</li>
-          <li>IoT permite que esos datos se integren en redes y plataformas conectadas.</li>
-          <li>Aplicación: sistemas de asistencia automatizados y monitoreo de personas u objetos.</li>
-        </ul>
       </div>
     ),
-    detailBody: (
-      <>
-        <h3>Arquitectura de un sistema RFID-IoT</h3>
-        <p>Tarjeta RFID → Lector → Microcontrolador (ESP32) → WiFi → Servidor → App Móvil.</p>
-        <h3>Ventajas</h3>
+    detailBody: <p>Ejemplo visual de un árbol de decisión para redes IoT.</p>,
+  },
+
+  {
+    id: "casos_uso",
+    title: "Casos de uso del Internet de las Cosas",
+    subtitle: "Aplicaciones prácticas y cotidianas",
+    color: 2,
+    body: (
+      <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+        <p>
+          Los casos de uso del Internet de las Cosas abarcan sectores tan diversos como la salud,
+          la industria, la educación y el transporte. Cada aplicación utiliza sensores y redes
+          conectadas para recopilar, procesar y compartir información en tiempo real.
+        </p>
         <ul>
-          <li>Registro automático y en tiempo real.</li>
-          <li>Sin errores manuales y acceso remoto.</li>
-          <li>Económico, escalable y con trazabilidad de datos.</li>
+          <li><strong>Salud:</strong> monitoreo remoto de pacientes.</li>
+          <li><strong>Industria:</strong> mantenimiento predictivo de maquinaria.</li>
+          <li><strong>Educación:</strong> control automatizado de asistencia y recursos.</li>
+          <li><strong>Ciudades inteligentes:</strong> gestión del tráfico y alumbrado público.</li>
         </ul>
-        <h3>Aplicaciones</h3>
-        <p>Educación, empresas, gimnasios, transporte público y más.</p>
         <img
           src="/img/casos-de-uso-simple.jpeg"
-          alt="Casos de uso RFID-IoT"
+          alt="Casos de uso IoT"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
-      </>
-    ),
-    sources: [
-      { label: "NXP RFID Solutions", href: "https://www.nxp.com/products/rfid-nfc" },
-    ],
-  },
-
-  // --- Danilo (Contenido completo del .docx) ---
-  {
-    id: "tecnologias_corto_alcance",
-    title: "Tecnologías de corto alcance",
-    subtitle: "WiFi, Bluetooth, Zigbee y Thread",
-    color: 2,
-    body: (
-      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
-        <ul>
-          <li><strong>WiFi (IEEE 802.11):</strong> 50-100 m, alta velocidad, consumo elevado.</li>
-          <li><strong>Bluetooth/BLE:</strong> 1-100 m, bajo consumo, ideal para wearables.</li>
-          <li><strong>Zigbee:</strong> 10-100 m, muy bajo consumo, topología mesh.</li>
-          <li><strong>Thread/Matter:</strong> interoperabilidad para hogares inteligentes.</li>
-        </ul>
       </div>
     ),
-    detailBody: (
-      <>
-        <h3>WiFi para IoT</h3>
+    detailBody: <p>Representación gráfica de ejemplos de IoT en distintos ámbitos.</p>,
+  },
+
+  {
+    id: "clasificacion_iot",
+    title: "Clasificación de tecnologías IoT",
+    subtitle: "Agrupación por alcance, consumo y propósito",
+    color: 2,
+    body: (
+      <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
         <p>
-          Utiliza estándares 802.11n/ac/ax con frecuencias 2.4, 5 y 6 GHz. Ideal para
-          dispositivos de alto rendimiento como cámaras IP y electrodomésticos conectados.
+          Las tecnologías IoT pueden clasificarse según su rango de comunicación, velocidad de
+          transmisión, consumo energético y topología de red. Esta clasificación permite elegir
+          la opción adecuada para cada escenario.
         </p>
-        <h3>Bluetooth y BLE</h3>
+        <ul>
+          <li><strong>Corto alcance:</strong> WiFi, Bluetooth, Zigbee.</li>
+          <li><strong>Largo alcance:</strong> LoRaWAN, Sigfox, NB-IoT.</li>
+          <li><strong>Satelital:</strong> IoT de cobertura global.</li>
+        </ul>
         <p>
-          Opera en 2.4 GHz con topologías punto a punto o malla. BLE optimiza consumo y
-          permite múltiples conexiones simultáneas.
-        </p>
-        <h3>Zigbee</h3>
-        <p>
-          Estándar IEEE 802.15.4 con red mesh autorreparable. Soporta hasta cientos de
-          dispositivos, ideal para automatización del hogar.
+          Comprender esta clasificación es esencial para el diseño de arquitecturas eficientes y
+          compatibles entre sí dentro del ecosistema del Internet de las Cosas.
         </p>
         <img
-          src="/img/comparativas.jpeg"
-          alt="Comparativas de tecnologías de corto alcance"
+          src="/img/clasificacion-iot.jpeg"
+          alt="Clasificación IoT"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
-      </>
+      </div>
     ),
-    sources: [
-      { label: "IEEE Xplore - Wireless Standards", href: "https://ieeexplore.ieee.org/" },
-    ],
+    detailBody: <p>Ejemplo de agrupación visual de las principales tecnologías IoT.</p>,
   },
 
   {
-    id: "tecnologias_largo_alcance",
-    title: "Tecnologías de largo alcance",
-    subtitle: "LoRaWAN, Sigfox, NB-IoT, LTE-M",
+    id: "coap_protocolo",
+    title: "Protocolo CoAP",
+    subtitle: "Comunicación ligera y eficiente para IoT",
     color: 2,
     body: (
-      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+      <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+        <p>
+          El protocolo CoAP (Constrained Application Protocol) está diseñado para dispositivos
+          con recursos limitados. Opera sobre UDP y sigue el paradigma REST, similar a HTTP,
+          permitiendo interacciones ligeras y rápidas entre dispositivos IoT.
+        </p>
         <ul>
-          <li><strong>LoRaWAN:</strong> 2–15 km urbano, 45 km rural, consumo muy bajo.</li>
-          <li><strong>Sigfox:</strong> hasta 50 km, muy bajo consumo, bajo ancho de banda.</li>
-          <li><strong>NB-IoT:</strong> cobertura extendida, ideal para medidores inteligentes.</li>
-          <li><strong>LTE-M:</strong> más rápido, compatible con redes LTE existentes.</li>
+          <li>Usa métodos GET, POST, PUT y DELETE.</li>
+          <li>Ideal para redes de baja potencia y sensores embebidos.</li>
+          <li>Optimizado para comunicación máquina a máquina (M2M).</li>
         </ul>
+        <img
+          src="/img/coap.jpeg"
+          alt="Protocolo CoAP"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
       </div>
     ),
-    detailBody: (
-      <>
-        <h3>LoRaWAN</h3>
+    detailBody: <p>Comparativa entre CoAP y otros protocolos de aplicación IoT.</p>,
+  },
+
+  {
+    id: "comparacion_visual",
+    title: "Comparación visual de tecnologías inalámbricas",
+    subtitle: "Diferencias entre redes de comunicación IoT",
+    color: 2,
+    body: (
+      <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
         <p>
-          Usa modulación LoRa (chirp spread spectrum). Arquitectura con nodos, gateways y
-          servidores de red. Ideal para agricultura inteligente y monitoreo ambiental.
+          Esta representación visual muestra las principales diferencias entre tecnologías IoT
+          en cuanto a velocidad, alcance, consumo energético y costo. Comparar estos parámetros
+          es clave para diseñar soluciones eficientes según el contexto de uso.
         </p>
-        <h3>Sigfox</h3>
+        <ul>
+          <li>WiFi: alta velocidad, corto alcance.</li>
+          <li>LoRaWAN: bajo consumo, largo alcance.</li>
+          <li>Sigfox: comunicación simple, datos limitados.</li>
+          <li>Zigbee: redes en malla confiables para automatización.</li>
+        </ul>
+        <img
+          src="/img/comparacion-visual-de-tecnologias.jpeg"
+          alt="Comparación visual IoT"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+      </div>
+    ),
+    detailBody: <p>Resumen visual de las características comparativas de IoT.</p>,
+  },
+
+  {
+    id: "las_5_capas",
+    title: "Las cinco capas de los protocolos IoT",
+    subtitle: "Modelo conceptual de comunicación en IoT",
+    color: 2,
+    body: (
+      <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
         <p>
-          Red operada globalmente con modulación ultra narrow band. Extremadamente eficiente,
-          pero con limitaciones de datos.
+          El modelo de cinco capas en IoT describe cómo los datos se originan, procesan y
+          transmiten hasta llegar a su destino. Cada capa cumple una función específica, desde
+          la adquisición de datos hasta la aplicación final.
         </p>
+        <ol>
+          <li><strong>Percepción:</strong> sensores y actuadores.</li>
+          <li><strong>Transporte:</strong> transmisión de datos (TCP/UDP).</li>
+          <li><strong>Red:</strong> direccionamiento y enrutamiento.</li>
+          <li><strong>Procesamiento:</strong> análisis de información.</li>
+          <li><strong>Aplicación:</strong> interacción con el usuario.</li>
+        </ol>
+        <p>
+          Este modelo sirve como base para la interoperabilidad entre distintas plataformas IoT
+          y protocolos de comunicación.
+        </p>
+        <img
+          src="/img/las-5-capas-de-los-protocolos.jpeg"
+          alt="Capas de comunicación IoT"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+      </div>
+    ),
+    detailBody: <p>Ejemplo educativo del flujo de datos en las capas IoT.</p>,
+  },
+
+  {
+    id: "lorawan",
+    title: "Tecnología LoRaWAN",
+    subtitle: "Redes de baja potencia y largo alcance",
+    color: 2,
+    body: (
+      <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+        <p>
+          LoRaWAN (Long Range Wide Area Network) es una tecnología de comunicación LPWAN
+          diseñada para transmitir datos a grandes distancias con un consumo mínimo de energía.
+          Se utiliza ampliamente en agricultura inteligente, monitoreo ambiental y ciudades
+          conectadas.
+        </p>
+        <ul>
+          <li>Opera en bandas ISM sin licencia.</li>
+          <li>Alcance de hasta 15 km en zonas rurales.</li>
+          <li>Topología de estrella con gateways y servidores de red.</li>
+        </ul>
         <img
           src="/img/lorawan.jpeg"
-          alt="Tecnologías de largo alcance"
+          alt="LoRaWAN IoT"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
-      </>
+      </div>
     ),
-    sources: [
-      { label: "LoRa Alliance", href: "https://lora-alliance.org/" },
-      { label: "Sigfox Official", href: "https://www.sigfox.com/" }
-    ],
+    detailBody: <p>Esquema de red LoRaWAN y flujo de datos.</p>,
   },
 
   {
-    id: "protocolos_iot",
-    title: "Protocolos de comunicación IoT",
-    subtitle: "Capas, estructuras y ejemplos",
+    id: "mqtt",
+    title: "Protocolo MQTT",
+    subtitle: "Comunicación ligera basada en publicación y suscripción",
     color: 2,
     body: (
-      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+      <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+        <p>
+          MQTT (Message Queuing Telemetry Transport) es un protocolo ampliamente usado en IoT por
+          su bajo consumo de ancho de banda y su eficiencia en redes inestables. Funciona con una
+          arquitectura de tipo <em>publish/subscribe</em>, donde los dispositivos publican
+          mensajes en tópicos gestionados por un broker central.
+        </p>
         <ul>
-          <li><strong>MQTT:</strong> Publish/Subscribe, ideal para telemetría.</li>
-          <li><strong>CoAP:</strong> REST sobre UDP, ligero y rápido.</li>
-          <li><strong>HTTP/HTTPS:</strong> estándar web para dispositivos potentes.</li>
-          <li><strong>WebSocket:</strong> conexión bidireccional persistente.</li>
+          <li>Ideal para sensores, medidores inteligentes y control remoto.</li>
+          <li>Basado en TCP/IP, ofrece entrega garantizada y priorización de mensajes.</li>
+          <li>Ligero, confiable y fácil de implementar en microcontroladores.</li>
         </ul>
+        <img
+          src="/img/mqtt.jpeg"
+          alt="Protocolo MQTT"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
       </div>
     ),
-    detailBody: (
-      <>
-        <h3>Modelo de capas IoT</h3>
+    detailBody: <p>Diagrama de funcionamiento del protocolo MQTT.</p>,
+  },
+
+  {
+    id: "mqtt_vs_coap",
+    title: "Comparativa MQTT vs CoAP",
+    subtitle: "Protocolos de comunicación ligera en IoT",
+    color: 2,
+    body: (
+      <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
         <p>
-          Física (transmisión), Enlace (control de acceso), Red (IPv6/6LoWPAN), Transporte
-          (TCP/UDP) y Aplicación (MQTT, CoAP, HTTP). Cada capa optimiza eficiencia y seguridad.
+          MQTT y CoAP son los protocolos más utilizados para el intercambio de datos en IoT.
+          Mientras MQTT emplea un modelo basado en publicación y suscripción sobre TCP, CoAP
+          utiliza el modelo cliente-servidor sobre UDP. La elección depende del contexto del
+          proyecto y las limitaciones del hardware.
         </p>
+        <ul>
+          <li><strong>MQTT:</strong> Fiabilidad y control de entrega.</li>
+          <li><strong>CoAP:</strong> Rapidez y bajo consumo.</li>
+          <li>Ambos pueden coexistir en ecosistemas híbridos de IoT.</li>
+        </ul>
         <img
           src="/img/mqtt-vs-coap.jpeg"
-          alt="Protocolos IoT"
+          alt="MQTT vs CoAP"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
-      </>
-    ),
-    sources: [
-      { label: "EMQX IoT Protocols", href: "https://www.emqx.com/en/blog/iot-protocols-mqtt-coap-lwm2m" }
-    ],
-  },
-
-  // --- Juan Fernando ---
-
-  {
-    id: "iot_satelital",
-    title: "IoT Satelital",
-    subtitle: "Conectividad global sin fronteras",
-    color: 2,
-    body: (
-      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
-        <p>
-          Las tecnologías IoT satelitales amplían la conectividad a zonas donde las redes
-          terrestres no alcanzan. Proveen cobertura global para aplicaciones críticas.
-        </p>
-        <ul>
-          <li><strong>Órbitas:</strong> LEO (Iridium, Swarm), GEO (Inmarsat, Thuraya).</li>
-          <li><strong>Cobertura:</strong> Total, incluyendo océanos y regiones polares.</li>
-          <li><strong>Latencia:</strong> 20–600 ms según órbita.</li>
-        </ul>
       </div>
     ),
-    detailBody: (
-      <>
-        <h3>Aplicaciones</h3>
+    detailBody: <p>Comparación directa de los dos protocolos más comunes en IoT.</p>,
+  },
+
+  {
+    id: "rfid",
+    title: "Tecnología RFID",
+    subtitle: "Identificación por radiofrecuencia aplicada al IoT",
+    color: 2,
+    body: (
+      <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+        <p>
+          RFID (Radio Frequency Identification) permite identificar objetos, personas o animales
+          mediante etiquetas electrónicas que se comunican con lectores de radiofrecuencia. Su
+          integración con IoT facilita la trazabilidad y la automatización en múltiples sectores.
+        </p>
         <ul>
-          <li>Monitoreo marítimo y flotas pesqueras.</li>
-          <li>Infraestructura petrolera offshore.</li>
-          <li>Agricultura remota y comunicaciones de emergencia.</li>
+          <li>Etiquetas pasivas y activas según el tipo de energía.</li>
+          <li>Aplicaciones en logística, retail, control de acceso y educación.</li>
+          <li>Complemento ideal para sistemas de monitoreo inteligente.</li>
+        </ul>
+        <img
+          src="/img/RFIDjuanjose.png"
+          alt="Sistema RFID"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+      </div>
+    ),
+    detailBody: <p>Ejemplo de arquitectura RFID conectada a red IoT.</p>,
+  },
+
+  {
+    id: "satelital",
+    title: "IoT satelital",
+    subtitle: "Conectividad global sin límites geográficos",
+    color: 2,
+    body: (
+      <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+        <p>
+          El IoT satelital amplía el alcance de la comunicación a nivel global, permitiendo la
+          conexión de dispositivos en zonas rurales, marítimas o desérticas. Su cobertura total
+          lo convierte en una solución clave para aplicaciones críticas y de emergencia.
+        </p>
+        <ul>
+          <li>Utiliza satélites en órbitas LEO y GEO.</li>
+          <li>Permite monitoreo remoto en cualquier parte del planeta.</li>
+          <li>Compatible con redes terrestres híbridas.</li>
         </ul>
         <img
           src="/img/satelital.png"
           alt="IoT Satelital"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
-      </>
+      </div>
     ),
-    sources: [
-      { label: "Iridium Global Network", href: "https://www.iridium.com/" },
-      { label: "Inmarsat Official", href: "https://www.inmarsat.com/" },
-    ],
+    detailBody: <p>Ejemplo visual de la conectividad satelital aplicada al IoT.</p>,
   },
 
   {
-    id: "protocolos_tecnologia",
-    title: "Protocolos específicos por tecnología",
-    subtitle: "Comunicación optimizada según el tipo de red",
+    id: "topologias_bluetooth",
+    title: "Topologías de red Bluetooth",
+    subtitle: "Estructura de comunicación en dispositivos personales",
     color: 2,
     body: (
-      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
-        <ul>
-          <li><strong>WiFi:</strong> WPA3, DHCP, TCP/IP, HTTP/HTTPS para transmisión directa.</li>
-          <li><strong>Bluetooth:</strong> GATT/GAP, L2CAP, ATT para conexión punto a punto.</li>
-          <li><strong>Zigbee:</strong> IEEE 802.15.4, red mesh con cifrado AES-128.</li>
-          <li><strong>LoRaWAN:</strong> LoRa PHY, MAC y cifrado end-to-end basado en AES.</li>
-          <li><strong>Sigfox:</strong> Protocolo propietario UNB (Ultra Narrow Band) de baja tasa.</li>
-        </ul>
-      </div>
-    ),
-    detailBody: (
-      <>
+      <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
         <p>
-          Cada tecnología inalámbrica utiliza protocolos adaptados a su propósito. 
-          WiFi y Bluetooth priorizan velocidad y compatibilidad, mientras Zigbee y LoRaWAN optimizan eficiencia energética y cobertura.
+          Bluetooth permite la comunicación entre dispositivos cercanos usando topologías
+          específicas como punto a punto, estrella o malla. Su versión BLE (Bluetooth Low Energy)
+          está optimizada para IoT, combinando bajo consumo con conectividad estable.
         </p>
-        <img
-          src="/img/zigbee.jpeg"
-          alt="Protocolos por tecnología"
-          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
-        />
-      </>
-    ),
-    sources: [
-      { label: "LoRaWAN Specification 1.1", href: "https://lora-alliance.org/resource-hub/lorawanr-specification-v11/" },
-      { label: "Bluetooth SIG Documentation", href: "https://www.bluetooth.com/specifications/specs/" },
-    ],
-  },
-
-  {
-    id: "gestion_dispositivos",
-    title: "Gestión y actualización de dispositivos IoT",
-    subtitle: "Mantenimiento, configuración y escalabilidad",
-    color: 2,
-    body: (
-      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
         <ul>
-          <li><strong>OTA (Over-The-Air):</strong> permite actualizar firmware de forma remota.</li>
-          <li><strong>Comisionamiento:</strong> registro y autenticación de nuevos nodos.</li>
-          <li><strong>Monitorización:</strong> detección de fallos, consumo y conectividad.</li>
-          <li><strong>Gestión remota:</strong> configuración mediante dashboards o APIs.</li>
+          <li>Piconet: conexión entre un maestro y múltiples esclavos.</li>
+          <li>Scatternet: interconexión de varias piconets.</li>
+          <li>Mesh: comunicación descentralizada para automatización del hogar.</li>
         </ul>
-      </div>
-    ),
-    detailBody: (
-      <>
-        <p>
-          El mantenimiento OTA reduce costos y mejora la seguridad. Los dispositivos pueden 
-          recibir nuevas funciones o parches sin intervención física, lo que aumenta la vida útil de la red.
-        </p>
         <img
           src="/img/topologias-bluetooth.jpeg"
-          alt="Gestión de dispositivos"
+          alt="Topologías Bluetooth"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
-      </>
+      </div>
     ),
-    sources: [
-      { label: "AWS IoT Device Management", href: "https://aws.amazon.com/iot-device-management/" },
-      { label: "Azure IoT Hub Documentation", href: "https://learn.microsoft.com/en-us/azure/iot-hub/" },
-    ],
+    detailBody: <p>Representación visual de las distintas estructuras Bluetooth.</p>,
+  },
+
+    {
+    id: "evolucion_redes_moviles",
+    title: "Evolución de las redes móviles",
+    subtitle: "De la 1G analógica al 5G inteligente",
+    color: 2,
+    body: (
+      <div style={{ borderTop: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
+        <p>
+          La evolución de las redes móviles ha sido uno de los procesos tecnológicos más
+          trascendentales en la historia de las telecomunicaciones. Desde las redes analógicas de
+          primera generación (1G) hasta las plataformas inteligentes y masivamente conectadas de
+          quinta generación (5G), cada etapa ha incrementado exponencialmente la capacidad,
+          velocidad y cobertura de los sistemas de comunicación.
+        </p>
+        <p>
+          La 1G introdujo la voz móvil analógica; la 2G digitalizó la comunicación, permitiendo
+          mensajes SMS; la 3G incorporó acceso a Internet móvil; la 4G trajo transmisión de datos
+          a alta velocidad mediante LTE; y la 5G revolucionó el ecosistema IoT con su latencia
+          ultrabaja y capacidad para conectar millones de dispositivos simultáneamente.
+        </p>
+        <p>
+          Este avance no solo mejoró la experiencia del usuario, sino que también habilitó nuevas
+          industrias: autos conectados, telemedicina, ciudades inteligentes y fábricas
+          automatizadas. Cada generación de red ha sentado las bases para la siguiente, acercando
+          al mundo a una conectividad total e instantánea.
+        </p>
+        <img
+          src="/img2/capacidad-de-las-redes-moviles-enhz.webp"
+          alt="Evolución de las redes móviles"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+        <img
+          src="/img2/evolution-de-las-redes-moviles-1g-2g-3g-4g-5g.png"
+          alt="Etapas 1G a 5G"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+        <img
+          src="/img2/evolution-de-las-redes-moviles-2.png"
+          alt="Resumen evolución redes móviles"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+      </div>
+    ),
   },
 
   {
-    id: "referencias_academicas",
-    title: "Referencias y fuentes técnicas",
-    subtitle: "Documentación y normativas de referencia",
+    id: "espectro_luz_infrarroja",
+    title: "Espectro electromagnético y luz infrarroja",
+    subtitle: "Fundamentos de la transmisión inalámbrica",
+    color: 2,
+    body: (
+      <div style={{ borderTop: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
+        <p>
+          Las comunicaciones inalámbricas se basan en la transmisión de ondas electromagnéticas
+          a través del espectro electromagnético. Este abarca desde las ondas de radio de baja
+          frecuencia hasta los rayos gamma, y dentro de él se encuentran las frecuencias utilizadas
+          para tecnologías como WiFi, Bluetooth, 5G e infrarrojo.
+        </p>
+        <p>
+          La luz infrarroja, en particular, ha sido ampliamente utilizada en los primeros sistemas
+          de control remoto, transmisión punto a punto y comunicación entre dispositivos cercanos.
+          Aunque limitada por la línea de visión y el alcance, su bajo costo y ausencia de
+          interferencia electromagnética la hacen ideal para entornos específicos.
+        </p>
+        <p>
+          Entender la ubicación de las bandas de frecuencia dentro del espectro permite optimizar
+          el diseño de sistemas IoT, evitando interferencias y aprovechando al máximo las
+          propiedades físicas de cada rango de onda.
+        </p>
+        <img
+          src="/img2/espectro-luz-infrarroja.png"
+          alt="Espectro de luz infrarroja"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+      </div>
+    ),
+  },
+
+  {
+    id: "capacidad_frecuencias",
+    title: "Capacidades y rangos de frecuencia",
+    subtitle: "Bases físicas de la comunicación inalámbrica",
+    color: 2,
+    body: (
+      <div style={{ borderTop: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
+        <p>
+          Las diferentes bandas de frecuencia dentro del espectro electromagnético determinan
+          la velocidad, el alcance y la calidad de las comunicaciones inalámbricas. Las frecuencias
+          bajas (como las de radio y VHF) se propagan a largas distancias pero con menor capacidad
+          de transmisión de datos, mientras que las frecuencias altas (como las de microondas y
+          milimétricas) ofrecen gran velocidad a costa de un menor rango.
+        </p>
+        <p>
+          Comprender las propiedades de cada rango es fundamental para el diseño de redes
+          eficientes. Por ejemplo, las tecnologías IoT de largo alcance como LoRaWAN o Sigfox
+          utilizan bandas sub-GHz, mientras que WiFi y 5G operan en frecuencias más altas
+          optimizadas para ancho de banda.
+        </p>
+        <p>
+          El equilibrio entre alcance, penetración y velocidad depende directamente de la
+          frecuencia utilizada. Por ello, la gestión del espectro es una tarea estratégica en el
+          desarrollo de nuevas generaciones de redes.
+        </p>
+        <img
+          src="/img2/capacidades-de-frecuencias.jpeg"
+          alt="Capacidades de frecuencias"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+      </div>
+    ),
+  },
+
+  {
+    id: "rfid_frecuencias",
+    title: "Frecuencias de operación en sistemas RFID",
+    subtitle: "Clasificación LF, HF y UHF en identificación por radiofrecuencia",
+    color: 2,
+    body: (
+      <div style={{ borderTop: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
+        <p>
+          Los sistemas RFID utilizan diferentes rangos de frecuencia dependiendo del tipo de
+          aplicación, el entorno y la distancia requerida entre el lector y la etiqueta. Estas
+          frecuencias determinan la velocidad de lectura, el alcance y la capacidad de penetración
+          del sistema.
+        </p>
+        <ul>
+          <li>
+            <strong>LF (Low Frequency, 125–134 kHz):</strong> corto alcance y alta tolerancia a
+            interferencias. Usado en control de acceso y seguimiento de animales.
+          </li>
+          <li>
+            <strong>HF (High Frequency, 13.56 MHz):</strong> alcance medio y mayor velocidad.
+            Popular en tarjetas inteligentes y etiquetas NFC.
+          </li>
+          <li>
+            <strong>UHF (Ultra High Frequency, 860–960 MHz):</strong> largo alcance y lectura
+            simultánea de múltiples etiquetas. Ideal para logística y trazabilidad.
+          </li>
+        </ul>
+        <p>
+          Cada rango presenta ventajas específicas según el entorno. Por ejemplo, las etiquetas LF
+          son más resistentes a materiales metálicos y líquidos, mientras que UHF es más eficiente
+          en entornos abiertos. Comprender esta clasificación permite seleccionar la tecnología RFID
+          más adecuada para cada escenario IoT.
+        </p>
+        <img
+          src="/img2/rfid-frequency-LF-HF-y-UHF-en-Hz.jpg"
+          alt="Frecuencias RFID LF HF UHF"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+      </div>
+    ),
+  },
+
+  {
+    id: "rfid_smart_card",
+    title: "Tarjetas RFID inteligentes",
+    subtitle: "Identificación y autenticación mediante radiofrecuencia",
+    color: 2,
+    body: (
+      <div style={{ borderTop: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
+        <p>
+          Las tarjetas RFID inteligentes son una aplicación ampliamente extendida de la
+          identificación por radiofrecuencia. Estas tarjetas contienen un chip y una antena que
+          permiten la comunicación con un lector RFID sin necesidad de contacto físico.
+        </p>
+        <p>
+          Este tipo de tecnología se utiliza en sistemas de transporte público, control de acceso,
+          pagos electrónicos, bibliotecas y hasta en entornos educativos para registro de asistencia.
+          Su fiabilidad y rapidez la convierten en una solución ideal para entornos donde se requiere
+          autenticación masiva o verificación rápida.
+        </p>
+        <p>
+          Además, combinadas con plataformas IoT, las tarjetas RFID pueden integrarse en sistemas de
+          gestión inteligentes, proporcionando trazabilidad, seguridad y automatización de procesos.
+        </p>
+        <img
+          src="/img2/RFID-smart-card.jpg"
+          alt="Tarjetas RFID inteligentes"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+      </div>
+    ),
+  },
+
+    {
+    id: "rfid_iot",
+    title: "RFID e Internet de las Cosas (IoT)",
+    subtitle: "Identificación y conectividad inteligente",
     color: 2,
     body: (
       <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+        <h3>RFID (Identificación por Radiofrecuencia)</h3>
         <ul>
-          <li>IEEE 802.11, 802.15.4, 802.16 — Estándares base de comunicación inalámbrica.</li>
-          <li>IETF RFC 7252 — CoAP Protocol.</li>
-          <li>LoRa Alliance — Especificaciones y certificaciones globales.</li>
-          <li>Bluetooth SIG — Documentación oficial GATT, GAP, L2CAP.</li>
-          <li>ETSI — Normativas europeas para espectro y seguridad IoT.</li>
+          <li>Tecnología que identifica objetos mediante ondas de radio sin contacto físico.</li>
+          <li>Componentes: Tarjeta (tag) + Lector + Sistema de procesamiento.</li>
+          <li>Frecuencia HF (13.56 MHz) ideal para control de asistencia.</li>
         </ul>
-      </div>
-    ),
-    detailBody: (
-      <>
-        <p>
-          Las organizaciones internacionales como IEEE, IETF y LoRa Alliance definen las bases 
-          técnicas y de seguridad de las redes IoT, garantizando interoperabilidad y confiabilidad global.
-        </p>
+
+        <h3>IoT (Internet of Things)</h3>
+        <ul>
+          <li>Red de dispositivos conectados que procesan datos automáticamente.</li>
+          <li>ESP32: Microcontrolador con WiFi/Bluetooth integrado.</li>
+          <li>Actúa como puente entre RFID y la nube.</li>
+        </ul>
+
         <img
-          src="/img/clasificacion-iot.jpeg"
-          alt="Referencias académicas"
+          src="/img3/RFID e IoT para Sistemas de Asistencia.png"
+          alt="RFID e Internet de las Cosas"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
-      </>
+      </div>
     ),
-    sources: [
-      { label: "IEEE Standards Association", href: "https://standards.ieee.org/" },
-      { label: "IETF CoAP RFC 7252", href: "https://datatracker.ietf.org/doc/html/rfc7252" },
-    ],
   },
 
   {
-    id: "retos_seguridad",
-    title: "Retos y seguridad en redes inalámbricas",
-    subtitle: "Privacidad, autenticación y cifrado",
-    color: 3,
+    id: "sistema_asistencia",
+    title: "Sistema de Asistencia Automatizado",
+    subtitle: "Control eficiente basado en RFID e IoT",
+    color: 2,
     body: (
-      <div style={{ borderBottom: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
-        <ul>
-          <li>Autenticación segura (WPA3, certificados, PSK).</li>
-          <li>Cifrado de extremo a extremo (AES, TLS).</li>
-          <li>Gestión de claves y rotación periódica.</li>
-          <li>Mitigación de ataques en entornos IoT masivos.</li>
-        </ul>
-      </div>
-    ),
-    detailBody: (
-      <>
+      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+        <h3>Arquitectura del Sistema</h3>
         <p>
-          Las redes inalámbricas deben equilibrar rendimiento y seguridad. Las vulnerabilidades
-          en cifrados débiles o dispositivos mal configurados pueden comprometer miles de nodos
-          interconectados.
+          Tarjeta RFID → Lector → ESP32 → WiFi → Servidor/Base de datos → App Móvil
         </p>
+
+        <h3>Ventajas</h3>
+        <ul>
+          <li>✓ Registro automático en tiempo real.</li>
+          <li>✓ Sin errores de registro manual.</li>
+          <li>✓ Acceso desde cualquier dispositivo.</li>
+          <li>✓ Económico y escalable.</li>
+          <li>✓ Datos seguros y trazables.</li>
+        </ul>
+
+        <h3>Aplicaciones</h3>
+        <p>Educación, empresas, eventos, gimnasios, transporte público.</p>
+
         <img
-          src="/img/satelital.png"
-          alt="Seguridad en redes inalámbricas"
+          src="/img3/Sistema de Asistencia Automatizado.jpg"
+          alt="Sistema de asistencia automatizado"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
-      </>
+      </div>
     ),
-    sources: [
-      { label: "Wi-Fi Alliance WPA3 Overview", href: "https://www.wi-fi.org/discover-wi-fi/security" },
-    ],
   },
 
-  {
+    {
     id: "conclusion_final",
-    title: "Conclusión",
-    subtitle: "El futuro de la conectividad",
-    color: 3,
+    title: "Conclusión general sobre las conexiones inalámbricas",
+    subtitle: "El futuro de la conectividad y los sistemas inteligentes",
+    color: 2,
     body: (
-      <div style={{ borderBottom: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
+      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
         <p>
-          Las conexiones inalámbricas representan uno de los pilares del mundo digital moderno.
-          Desde la telegrafía hasta las redes satelitales, su evolución continúa impulsando la
-          sociedad hacia un entorno completamente interconectado.
+          Las conexiones inalámbricas representan uno de los pilares fundamentales del desarrollo
+          tecnológico contemporáneo. Gracias a ellas, la comunicación, la automatización y la
+          transferencia de información se realizan sin depender de cables físicos, impulsando la
+          creación de ecosistemas inteligentes donde personas, objetos y sistemas interactúan de
+          forma continua.
         </p>
-      </div>
-    ),
-    detailBody: (
-      <>
         <p>
-          El futuro se orienta hacia redes autónomas, adaptativas y sostenibles, con inteligencia
-          artificial gestionando la comunicación entre millones de dispositivos. La conectividad
-          total ya no es un sueño: es una realidad en construcción.
+          Desde las redes de baja potencia hasta la conectividad satelital, cada tecnología ha
+          aportado herramientas únicas para resolver los retos de cobertura, velocidad y consumo
+          energético. El Internet de las Cosas se ha consolidado como el motor de esta evolución,
+          permitiendo que los datos fluyan entre dispositivos distribuidos en todo el planeta.
+        </p>
+        <p>
+          Mirando hacia el futuro, las redes 6G, la inteligencia artificial y la computación en el
+          borde (<em>edge computing</em>) transformarán aún más la manera en que nos conectamos.
+          El objetivo ya no es solo transmitir información, sino hacerlo de manera más eficiente,
+          sostenible y segura, habilitando una sociedad completamente interconectada.
         </p>
         <img
-          src="/img/satelital.png"
-          alt="Futuro de la conectividad"
+          src="/img3/conclusión.jpg"
+          alt="Conclusión sobre las conexiones inalámbricas"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
-      </>
+      </div>
     ),
-    sources: [
-      { label: "IEEE Future Networks", href: "https://futurenetworks.ieee.org/" }
-    ],
   },
 
 ];

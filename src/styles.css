@@ -23,6 +23,12 @@ body::-webkit-scrollbar {
   min-height: 100vh;
 }
 
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .app-header {
   display: flex;
   justify-content: space-between;
@@ -74,6 +80,9 @@ body::-webkit-scrollbar {
   border-top: 1px solid #e5e7eb;
   background: #ffffff;
   z-index: 1;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 /* --- Botones --- */
