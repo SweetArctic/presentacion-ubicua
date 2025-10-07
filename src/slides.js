@@ -314,76 +314,6 @@ const slides = [
 },
 
 {
-  id: "arquitectura_sistema",
-  title: "Arquitectura del Sistema",
-  subtitle: "Flujo completo de datos en el sistema de asistencia",
-  color: 2,
-  body: (
-    <div style={{ borderTop: `2px solid ${slideColors.color1}`, paddingBottom: "0.5rem" }}>
-      <p>
-        Ahora veamos cómo todos los componentes del sistema de asistencia trabajan en conjunto.
-        A continuación se explica el flujo completo de datos desde que un estudiante registra su
-        asistencia hasta que la información llega a la aplicación móvil.
-      </p>
-
-      <ol style={{ lineHeight: "1.8" }}>
-        <li>
-          <strong>Paso 1:</strong> Un estudiante acerca su tarjeta RFID al lector. Esta tarjeta
-          contiene un identificador único que representa su identidad dentro del sistema.
-        </li>
-        <li>
-          <strong>Paso 2:</strong> El lector RFID captura ese identificador y lo envía al
-          microcontrolador ESP32 mediante comunicación serial.
-        </li>
-        <li>
-          <strong>Paso 3:</strong> El ESP32 recibe el dato, lo procesa, añade información adicional
-          como la fecha y hora exacta, y prepara el paquete de datos para ser enviado.
-        </li>
-        <li>
-          <strong>Paso 4:</strong> Utilizando su conexión WiFi, el ESP32 transmite los datos a un
-          servidor en la nube. Aquí intervienen las tecnologías de comunicación inalámbrica vistas
-          anteriormente.
-        </li>
-        <li>
-          <strong>Paso 5:</strong> Los datos llegan a una base de datos en la nube, donde se
-          almacenan de forma segura. Se pueden utilizar servicios como Firebase, AWS o un servidor
-          personalizado con MySQL o MongoDB.
-        </li>
-        <li>
-          <strong>Paso 6:</strong> Finalmente, la aplicación móvil consulta esta base de datos y
-          muestra la información en tiempo real. Los profesores pueden visualizar la asistencia,
-          generar reportes y hacer seguimiento desde su celular o computadora.
-        </li>
-      </ol>
-
-      <p>
-        Para la comunicación entre dispositivos se utilizan protocolos optimizados para IoT, como{" "}
-        <strong>MQTT</strong>, ideal por su bajo consumo y confiabilidad, o{" "}
-        <strong>HTTP/HTTPS</strong>, que permite interactuar con APIs REST de forma segura. Estos
-        protocolos garantizan la entrega completa y ordenada de los datos.
-      </p>
-
-      <img
-        src="/img/diagrama.png"
-        alt="Arquitectura del sistema de asistencia"
-        style={{
-          width: "40%",
-          marginTop: "1rem",
-          borderRadius: "8px",
-        }}
-      />
-    </div>
-  ),
-  detailBody: (
-    <p>
-      Esquema del flujo de datos: Tarjeta RFID → Lector → ESP32 → WiFi → Servidor → Base de datos →
-      Aplicación móvil.
-    </p>
-  ),
-},
-
-
-{
   id: "rfid_smart_card",
   title: "Tarjetas RFID inteligentes",
   subtitle: "Identificación y autenticación mediante radiofrecuencia",
@@ -420,7 +350,7 @@ const slides = [
   subtitle: "La evolución de la conectividad inalámbrica",
   color: 3,
   body: (
-    <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+    <div style={{ borderTop: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
       <p>
         Las <strong>redes móviles</strong> han transformado por completo la forma en que nos
         comunicamos y accedemos a la información. Desde las primeras llamadas analógicas hasta
@@ -753,34 +683,6 @@ const slides = [
   },
 
   {
-    id: "comparacion_visual",
-    title: "Comparación visual de tecnologías inalámbricas",
-    subtitle: "Diferencias entre redes de comunicación IoT",
-    color: 2,
-    body: (
-      <div style={{ borderTop: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
-        <p>
-          Esta representación visual muestra las principales diferencias entre tecnologías IoT
-          en cuanto a velocidad, alcance, consumo energético y costo. Comparar estos parámetros
-          es clave para diseñar soluciones eficientes según el contexto de uso.
-        </p>
-        <ul>
-          <li>WiFi: alta velocidad, corto alcance.</li>
-          <li>LoRaWAN: bajo consumo, largo alcance.</li>
-          <li>Sigfox: comunicación simple, datos limitados.</li>
-          <li>Zigbee: redes en malla confiables para automatización.</li>
-        </ul>
-        <img
-          src="/img/comparacion-visual-de-tectnologias.jpeg"
-          alt="Comparación visual IoT"
-          style={{ width: "100%", marginTop: "1rem", borderRadius: "8px" }}
-        />
-      </div>
-    ),
-    detailBody: <p>Resumen visual de las características comparativas de IoT.</p>,
-  },
-
-  {
     id: "las_5_capas",
     title: "Las cinco capas de los protocolos IoT",
     subtitle: "Modelo conceptual de comunicación en IoT",
@@ -1007,6 +909,75 @@ const slides = [
       </div>
     ),
   },
+
+  {
+  id: "arquitectura_sistema",
+  title: "Arquitectura del Sistema",
+  subtitle: "Flujo completo de datos en el sistema de asistencia",
+  color: 2,
+  body: (
+    <div style={{ borderTop: `2px solid ${slideColors.color1}`, paddingBottom: "0.5rem" }}>
+      <p>
+        Ahora veamos cómo todos los componentes del sistema de asistencia trabajan en conjunto.
+        A continuación se explica el flujo completo de datos desde que un estudiante registra su
+        asistencia hasta que la información llega a la aplicación móvil.
+      </p>
+
+      <ol style={{ lineHeight: "1.8" }}>
+        <li>
+          <strong>Paso 1:</strong> Un estudiante acerca su tarjeta RFID al lector. Esta tarjeta
+          contiene un identificador único que representa su identidad dentro del sistema.
+        </li>
+        <li>
+          <strong>Paso 2:</strong> El lector RFID captura ese identificador y lo envía al
+          microcontrolador ESP32 mediante comunicación serial.
+        </li>
+        <li>
+          <strong>Paso 3:</strong> El ESP32 recibe el dato, lo procesa, añade información adicional
+          como la fecha y hora exacta, y prepara el paquete de datos para ser enviado.
+        </li>
+        <li>
+          <strong>Paso 4:</strong> Utilizando su conexión WiFi, el ESP32 transmite los datos a un
+          servidor en la nube. Aquí intervienen las tecnologías de comunicación inalámbrica vistas
+          anteriormente.
+        </li>
+        <li>
+          <strong>Paso 5:</strong> Los datos llegan a una base de datos en la nube, donde se
+          almacenan de forma segura. Se pueden utilizar servicios como Firebase, AWS o un servidor
+          personalizado con MySQL o MongoDB.
+        </li>
+        <li>
+          <strong>Paso 6:</strong> Finalmente, la aplicación móvil consulta esta base de datos y
+          muestra la información en tiempo real. Los profesores pueden visualizar la asistencia,
+          generar reportes y hacer seguimiento desde su celular o computadora.
+        </li>
+      </ol>
+
+      <p>
+        Para la comunicación entre dispositivos se utilizan protocolos optimizados para IoT, como{" "}
+        <strong>MQTT</strong>, ideal por su bajo consumo y confiabilidad, o{" "}
+        <strong>HTTP/HTTPS</strong>, que permite interactuar con APIs REST de forma segura. Estos
+        protocolos garantizan la entrega completa y ordenada de los datos.
+      </p>
+
+      <img
+        src="/img/diagrama.png"
+        alt="Arquitectura del sistema de asistencia"
+        style={{
+          width: "40%",
+          marginTop: "1rem",
+          borderRadius: "8px",
+        }}
+      />
+    </div>
+  ),
+  detailBody: (
+    <p>
+      Esquema del flujo de datos: Tarjeta RFID → Lector → ESP32 → WiFi → Servidor → Base de datos →
+      Aplicación móvil.
+    </p>
+  ),
+},
 
   {
     id: "sistema_asistencia",
