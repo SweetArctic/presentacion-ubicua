@@ -39,13 +39,7 @@ const pages = [
     >
       <div className={styles.content}>
         <h2>Tema</h2>
-        <p>Computación Ubicua</p>
-        <h3>Introducción</h3>
-        <p>
-          La computación ubicua se centra en integrar la tecnología en el entorno
-          físico para que sea accesible en todo momento y lugar, de manera
-          invisible para el usuario.
-        </p>
+        <p>Conexiones Inalámbricas</p>
       </div>
     </animated.div>
   ),
