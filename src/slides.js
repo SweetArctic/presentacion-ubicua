@@ -211,72 +211,6 @@ const slides = [
   },
 
   // --- Juan Fernando ---
-  {
-    id: "retos_seguridad",
-    title: "Retos y seguridad en redes inalámbricas",
-    subtitle: "Privacidad, autenticación y cifrado",
-    color: 3,
-    body: (
-      <div style={{ borderBottom: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
-        <ul>
-          <li>Autenticación segura (WPA3, certificados, PSK).</li>
-          <li>Cifrado de extremo a extremo (AES, TLS).</li>
-          <li>Gestión de claves y rotación periódica.</li>
-          <li>Mitigación de ataques en entornos IoT masivos.</li>
-        </ul>
-      </div>
-    ),
-    detailBody: (
-      <>
-        <p>
-          Las redes inalámbricas deben equilibrar rendimiento y seguridad. Las vulnerabilidades
-          en cifrados débiles o dispositivos mal configurados pueden comprometer miles de nodos
-          interconectados.
-        </p>
-        <img
-          src="/img/satelital.png"
-          alt="Seguridad en redes inalámbricas"
-          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
-        />
-      </>
-    ),
-    sources: [
-      { label: "Wi-Fi Alliance WPA3 Overview", href: "https://www.wi-fi.org/discover-wi-fi/security" },
-    ],
-  },
-
-  {
-    id: "conclusion_final",
-    title: "Conclusión",
-    subtitle: "El futuro de la conectividad",
-    color: 3,
-    body: (
-      <div style={{ borderBottom: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
-        <p>
-          Las conexiones inalámbricas representan uno de los pilares del mundo digital moderno.
-          Desde la telegrafía hasta las redes satelitales, su evolución continúa impulsando la
-          sociedad hacia un entorno completamente interconectado.
-        </p>
-      </div>
-    ),
-    detailBody: (
-      <>
-        <p>
-          El futuro se orienta hacia redes autónomas, adaptativas y sostenibles, con inteligencia
-          artificial gestionando la comunicación entre millones de dispositivos. La conectividad
-          total ya no es un sueño: es una realidad en construcción.
-        </p>
-        <img
-          src="/img/satelital.png"
-          alt="Futuro de la conectividad"
-          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
-        />
-      </>
-    ),
-    sources: [
-      { label: "IEEE Future Networks", href: "https://futurenetworks.ieee.org/" }
-    ],
-  },
 
   {
     id: "iot_satelital",
@@ -418,6 +352,73 @@ const slides = [
     sources: [
       { label: "IEEE Standards Association", href: "https://standards.ieee.org/" },
       { label: "IETF CoAP RFC 7252", href: "https://datatracker.ietf.org/doc/html/rfc7252" },
+    ],
+  },
+
+  {
+    id: "retos_seguridad",
+    title: "Retos y seguridad en redes inalámbricas",
+    subtitle: "Privacidad, autenticación y cifrado",
+    color: 3,
+    body: (
+      <div style={{ borderBottom: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
+        <ul>
+          <li>Autenticación segura (WPA3, certificados, PSK).</li>
+          <li>Cifrado de extremo a extremo (AES, TLS).</li>
+          <li>Gestión de claves y rotación periódica.</li>
+          <li>Mitigación de ataques en entornos IoT masivos.</li>
+        </ul>
+      </div>
+    ),
+    detailBody: (
+      <>
+        <p>
+          Las redes inalámbricas deben equilibrar rendimiento y seguridad. Las vulnerabilidades
+          en cifrados débiles o dispositivos mal configurados pueden comprometer miles de nodos
+          interconectados.
+        </p>
+        <img
+          src="/img/satelital.png"
+          alt="Seguridad en redes inalámbricas"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+      </>
+    ),
+    sources: [
+      { label: "Wi-Fi Alliance WPA3 Overview", href: "https://www.wi-fi.org/discover-wi-fi/security" },
+    ],
+  },
+
+  {
+    id: "conclusion_final",
+    title: "Conclusión",
+    subtitle: "El futuro de la conectividad",
+    color: 3,
+    body: (
+      <div style={{ borderBottom: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
+        <p>
+          Las conexiones inalámbricas representan uno de los pilares del mundo digital moderno.
+          Desde la telegrafía hasta las redes satelitales, su evolución continúa impulsando la
+          sociedad hacia un entorno completamente interconectado.
+        </p>
+      </div>
+    ),
+    detailBody: (
+      <>
+        <p>
+          El futuro se orienta hacia redes autónomas, adaptativas y sostenibles, con inteligencia
+          artificial gestionando la comunicación entre millones de dispositivos. La conectividad
+          total ya no es un sueño: es una realidad en construcción.
+        </p>
+        <img
+          src="/img/satelital.png"
+          alt="Futuro de la conectividad"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+      </>
+    ),
+    sources: [
+      { label: "IEEE Future Networks", href: "https://futurenetworks.ieee.org/" }
     ],
   },
 
