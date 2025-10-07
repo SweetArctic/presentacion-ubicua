@@ -36,6 +36,11 @@ const slides = [
           militar, la expansión de las telecomunicaciones y, más recientemente, por la demanda
           de conectividad universal.
         </p>
+        <img
+          src="/img/comparativas.jpeg"
+          alt="Comparativas de tecnologías inalámbricas"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
       </>
     ),
     sources: [
@@ -74,9 +79,9 @@ const slides = [
         </ul>
         <h3>Aplicaciones</h3>
         <p>Educación, empresas, gimnasios, transporte público y más.</p>
-              <img
-          src="/img/satelital.png"
-          alt="Diagrama de conectividad IoT Satelital"
+        <img
+          src="/img/casos-de-uso-simple.jpeg"
+          alt="Casos de uso RFID-IoT"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
       </>
@@ -86,7 +91,7 @@ const slides = [
     ],
   },
 
-  // --- Danilo (Contenido del .docx) ---
+  // --- Danilo (Contenido completo del .docx) ---
   {
     id: "tecnologias_corto_alcance",
     title: "Tecnologías de corto alcance",
@@ -119,9 +124,9 @@ const slides = [
           Estándar IEEE 802.15.4 con red mesh autorreparable. Soporta hasta cientos de
           dispositivos, ideal para automatización del hogar.
         </p>
-              <img
-          src="/img/satelital.png"
-          alt="Diagrama de conectividad IoT Satelital"
+        <img
+          src="/img/comparativas.jpeg"
+          alt="Comparativas de tecnologías de corto alcance"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
       </>
@@ -158,9 +163,9 @@ const slides = [
           Red operada globalmente con modulación ultra narrow band. Extremadamente eficiente,
           pero con limitaciones de datos.
         </p>
-              <img
-          src="/img/satelital.png"
-          alt="Diagrama de conectividad IoT Satelital"
+        <img
+          src="/img/lorawan.jpeg"
+          alt="Tecnologías de largo alcance"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
       </>
@@ -193,9 +198,9 @@ const slides = [
           Física (transmisión), Enlace (control de acceso), Red (IPv6/6LoWPAN), Transporte
           (TCP/UDP) y Aplicación (MQTT, CoAP, HTTP). Cada capa optimiza eficiencia y seguridad.
         </p>
-              <img
-          src="/img/satelital.png"
-          alt="Diagrama de conectividad IoT Satelital"
+        <img
+          src="/img/mqtt-vs-coap.jpeg"
+          alt="Protocolos IoT"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
       </>
@@ -228,9 +233,9 @@ const slides = [
           en cifrados débiles o dispositivos mal configurados pueden comprometer miles de nodos
           interconectados.
         </p>
-              <img
+        <img
           src="/img/satelital.png"
-          alt="Diagrama de conectividad IoT Satelital"
+          alt="Seguridad en redes inalámbricas"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
       </>
@@ -261,145 +266,160 @@ const slides = [
           artificial gestionando la comunicación entre millones de dispositivos. La conectividad
           total ya no es un sueño: es una realidad en construcción.
         </p>
+        <img
+          src="/img/satelital.png"
+          alt="Futuro de la conectividad"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
       </>
     ),
-sources: [
+    sources: [
       { label: "IEEE Future Networks", href: "https://futurenetworks.ieee.org/" }
     ],
   },
 
-{
-  id: "iot_satelital",
-  title: "IoT Satelital",
-  subtitle: "Conectividad global sin fronteras",
-  color: 2,
-  body: (
-    <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
-      <p>
-        Las tecnologías IoT satelitales amplían la conectividad a zonas donde las redes
-        terrestres no alcanzan. Proveen cobertura global para aplicaciones críticas.
-      </p>
-      <ul>
-        <li><strong>Órbitas:</strong> LEO (Iridium, Swarm), GEO (Inmarsat, Thuraya).</li>
-        <li><strong>Cobertura:</strong> Total, incluyendo océanos y regiones polares.</li>
-        <li><strong>Latencia:</strong> 20–600 ms según órbita.</li>
-      </ul>
-    </div>
-  ),
-  detailBody: (
-    <>
-      <h3>Aplicaciones</h3>
-      <ul>
-        <li>Monitoreo marítimo y flotas pesqueras.</li>
-        <li>Infraestructura petrolera offshore.</li>
-        <li>Agricultura remota y comunicaciones de emergencia.</li>
-      </ul>
-      <img
+  {
+    id: "iot_satelital",
+    title: "IoT Satelital",
+    subtitle: "Conectividad global sin fronteras",
+    color: 2,
+    body: (
+      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+        <p>
+          Las tecnologías IoT satelitales amplían la conectividad a zonas donde las redes
+          terrestres no alcanzan. Proveen cobertura global para aplicaciones críticas.
+        </p>
+        <ul>
+          <li><strong>Órbitas:</strong> LEO (Iridium, Swarm), GEO (Inmarsat, Thuraya).</li>
+          <li><strong>Cobertura:</strong> Total, incluyendo océanos y regiones polares.</li>
+          <li><strong>Latencia:</strong> 20–600 ms según órbita.</li>
+        </ul>
+      </div>
+    ),
+    detailBody: (
+      <>
+        <h3>Aplicaciones</h3>
+        <ul>
+          <li>Monitoreo marítimo y flotas pesqueras.</li>
+          <li>Infraestructura petrolera offshore.</li>
+          <li>Agricultura remota y comunicaciones de emergencia.</li>
+        </ul>
+        <img
           src="/img/satelital.png"
-          alt="Diagrama de conectividad IoT Satelital"
+          alt="IoT Satelital"
           style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
         />
-    </>
-  ),
-  sources: [
-    { label: "Iridium Global Network", href: "https://www.iridium.com/" },
-    { label: "Inmarsat Official", href: "https://www.inmarsat.com/" },
-  ],
-},
+      </>
+    ),
+    sources: [
+      { label: "Iridium Global Network", href: "https://www.iridium.com/" },
+      { label: "Inmarsat Official", href: "https://www.inmarsat.com/" },
+    ],
+  },
 
-{
-  id: "protocolos_tecnologia",
-  title: "Protocolos específicos por tecnología",
-  subtitle: "Comunicación optimizada según el tipo de red",
-  color: 2,
-  body: (
-    <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
-      <ul>
-        <li><strong>WiFi:</strong> WPA3, DHCP, TCP/IP, HTTP/HTTPS para transmisión directa.</li>
-        <li><strong>Bluetooth:</strong> GATT/GAP, L2CAP, ATT para conexión punto a punto.</li>
-        <li><strong>Zigbee:</strong> IEEE 802.15.4, red mesh con cifrado AES-128.</li>
-        <li><strong>LoRaWAN:</strong> LoRa PHY, MAC y cifrado end-to-end basado en AES.</li>
-        <li><strong>Sigfox:</strong> Protocolo propietario UNB (Ultra Narrow Band) de baja tasa.</li>
-      </ul>
-    </div>
-  ),
-  detailBody: (
-    <>
-      <p>
-        Cada tecnología inalámbrica utiliza protocolos adaptados a su propósito. 
-        WiFi y Bluetooth priorizan velocidad y compatibilidad, mientras Zigbee y LoRaWAN optimizan eficiencia energética y cobertura.
-      </p>
-      {/* espacio para imagen futura */}
-    </>
-  ),
-  sources: [
-    { label: "LoRaWAN Specification 1.1", href: "https://lora-alliance.org/resource-hub/lorawanr-specification-v11/" },
-    { label: "Bluetooth SIG Documentation", href: "https://www.bluetooth.com/specifications/specs/" },
-  ],
-},
+  {
+    id: "protocolos_tecnologia",
+    title: "Protocolos específicos por tecnología",
+    subtitle: "Comunicación optimizada según el tipo de red",
+    color: 2,
+    body: (
+      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+        <ul>
+          <li><strong>WiFi:</strong> WPA3, DHCP, TCP/IP, HTTP/HTTPS para transmisión directa.</li>
+          <li><strong>Bluetooth:</strong> GATT/GAP, L2CAP, ATT para conexión punto a punto.</li>
+          <li><strong>Zigbee:</strong> IEEE 802.15.4, red mesh con cifrado AES-128.</li>
+          <li><strong>LoRaWAN:</strong> LoRa PHY, MAC y cifrado end-to-end basado en AES.</li>
+          <li><strong>Sigfox:</strong> Protocolo propietario UNB (Ultra Narrow Band) de baja tasa.</li>
+        </ul>
+      </div>
+    ),
+    detailBody: (
+      <>
+        <p>
+          Cada tecnología inalámbrica utiliza protocolos adaptados a su propósito. 
+          WiFi y Bluetooth priorizan velocidad y compatibilidad, mientras Zigbee y LoRaWAN optimizan eficiencia energética y cobertura.
+        </p>
+        <img
+          src="/img/zigbee.jpeg"
+          alt="Protocolos por tecnología"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+      </>
+    ),
+    sources: [
+      { label: "LoRaWAN Specification 1.1", href: "https://lora-alliance.org/resource-hub/lorawanr-specification-v11/" },
+      { label: "Bluetooth SIG Documentation", href: "https://www.bluetooth.com/specifications/specs/" },
+    ],
+  },
 
-{
-  id: "gestion_dispositivos",
-  title: "Gestión y actualización de dispositivos IoT",
-  subtitle: "Mantenimiento, configuración y escalabilidad",
-  color: 2,
-  body: (
-    <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
-      <ul>
-        <li><strong>OTA (Over-The-Air):</strong> permite actualizar firmware de forma remota.</li>
-        <li><strong>Comisionamiento:</strong> registro y autenticación de nuevos nodos.</li>
-        <li><strong>Monitorización:</strong> detección de fallos, consumo y conectividad.</li>
-        <li><strong>Gestión remota:</strong> configuración mediante dashboards o APIs.</li>
-      </ul>
-    </div>
-  ),
-  detailBody: (
-    <>
-      <p>
-        El mantenimiento OTA reduce costos y mejora la seguridad. Los dispositivos pueden 
-        recibir nuevas funciones o parches sin intervención física, lo que aumenta la vida útil de la red.
-      </p>
-      {/* espacio para imagen futura */}
-    </>
-  ),
-  sources: [
-    { label: "AWS IoT Device Management", href: "https://aws.amazon.com/iot-device-management/" },
-    { label: "Azure IoT Hub Documentation", href: "https://learn.microsoft.com/en-us/azure/iot-hub/" },
-  ],
-},
+  {
+    id: "gestion_dispositivos",
+    title: "Gestión y actualización de dispositivos IoT",
+    subtitle: "Mantenimiento, configuración y escalabilidad",
+    color: 2,
+    body: (
+      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+        <ul>
+          <li><strong>OTA (Over-The-Air):</strong> permite actualizar firmware de forma remota.</li>
+          <li><strong>Comisionamiento:</strong> registro y autenticación de nuevos nodos.</li>
+          <li><strong>Monitorización:</strong> detección de fallos, consumo y conectividad.</li>
+          <li><strong>Gestión remota:</strong> configuración mediante dashboards o APIs.</li>
+        </ul>
+      </div>
+    ),
+    detailBody: (
+      <>
+        <p>
+          El mantenimiento OTA reduce costos y mejora la seguridad. Los dispositivos pueden 
+          recibir nuevas funciones o parches sin intervención física, lo que aumenta la vida útil de la red.
+        </p>
+        <img
+          src="/img/topologias-bluetooth.jpeg"
+          alt="Gestión de dispositivos"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+      </>
+    ),
+    sources: [
+      { label: "AWS IoT Device Management", href: "https://aws.amazon.com/iot-device-management/" },
+      { label: "Azure IoT Hub Documentation", href: "https://learn.microsoft.com/en-us/azure/iot-hub/" },
+    ],
+  },
 
-{
-  id: "referencias_academicas",
-  title: "Referencias y fuentes técnicas",
-  subtitle: "Documentación y normativas de referencia",
-  color: 2,
-  body: (
-    <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
-      <ul>
-        <li>IEEE 802.11, 802.15.4, 802.16 — Estándares base de comunicación inalámbrica.</li>
-        <li>IETF RFC 7252 — CoAP Protocol.</li>
-        <li>LoRa Alliance — Especificaciones y certificaciones globales.</li>
-        <li>Bluetooth SIG — Documentación oficial GATT, GAP, L2CAP.</li>
-        <li>ETSI — Normativas europeas para espectro y seguridad IoT.</li>
-      </ul>
-    </div>
-  ),
-  detailBody: (
-    <>
-      <p>
-        Las organizaciones internacionales como IEEE, IETF y LoRa Alliance definen las bases 
-        técnicas y de seguridad de las redes IoT, garantizando interoperabilidad y confiabilidad global.
-      </p>
-      {/* espacio para imagen futura */}
-    </>
-  ),
-  sources: [
-    { label: "IEEE Standards Association", href: "https://standards.ieee.org/" },
-    { label: "IETF CoAP RFC 7252", href: "https://datatracker.ietf.org/doc/html/rfc7252" },
-  ],
-},
-
-
+  {
+    id: "referencias_academicas",
+    title: "Referencias y fuentes técnicas",
+    subtitle: "Documentación y normativas de referencia",
+    color: 2,
+    body: (
+      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+        <ul>
+          <li>IEEE 802.11, 802.15.4, 802.16 — Estándares base de comunicación inalámbrica.</li>
+          <li>IETF RFC 7252 — CoAP Protocol.</li>
+          <li>LoRa Alliance — Especificaciones y certificaciones globales.</li>
+          <li>Bluetooth SIG — Documentación oficial GATT, GAP, L2CAP.</li>
+          <li>ETSI — Normativas europeas para espectro y seguridad IoT.</li>
+        </ul>
+      </div>
+    ),
+    detailBody: (
+      <>
+        <p>
+          Las organizaciones internacionales como IEEE, IETF y LoRa Alliance definen las bases 
+          técnicas y de seguridad de las redes IoT, garantizando interoperabilidad y confiabilidad global.
+        </p>
+        <img
+          src="/img/clasificacion-iot.jpeg"
+          alt="Referencias académicas"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+      </>
+    ),
+    sources: [
+      { label: "IEEE Standards Association", href: "https://standards.ieee.org/" },
+      { label: "IETF CoAP RFC 7252", href: "https://datatracker.ietf.org/doc/html/rfc7252" },
+    ],
+  },
 
 ];
 
