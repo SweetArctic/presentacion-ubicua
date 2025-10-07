@@ -25,7 +25,6 @@ export default function App() {
 
   const openDetail = () => {
     sidebarPrevState.current = sidebarOpen;
-    setSidebarOpen(false);
     setShowDetail(true);
   };
 
@@ -53,7 +52,7 @@ export default function App() {
             onClick={() => setSidebarOpen((s) => !s)}
             className="ghost"
           >
-            Fuentes
+            Menú
           </button>
 
           {/* Botón que lleva a la intro */}
