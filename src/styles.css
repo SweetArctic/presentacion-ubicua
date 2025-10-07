@@ -51,12 +51,14 @@ body {
   display: flex;
   background: #f9fafb;
   transition: background 0.3s ease;
+  max-width: calc(100vw - 300px);
 }
 
 .app-footer {
   padding: 8px 16px;
   border-top: 1px solid #e5e7eb;
   background: #ffffff;
+  z-index: 1;
 }
 
 /* --- Botones --- */
@@ -155,14 +157,21 @@ button.secondary:hover {
 
 /* --- Sidebar --- */
 .sidebar {
+  position: fixed;
+  right: 0;
+  top: 68.8px;
   width: 300px;
-  background: #ffffff;
-  border-left: 1px solid #e5e7eb;
-  padding: 16px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  background-color: #fff;
+  border-left: 1px solid #ddd;
+  padding: 1rem;
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
   transform: translateX(100%);
-  position: relative;
 }
+
+
 .sidebar.open {
   transform: translateX(0);
 }
@@ -201,7 +210,7 @@ button.secondary:hover {
 }
 .slide-link .num {
   font-weight: 700;
-  width: 26px;
+  min-width: 26px;
   height: 26px;
   border-radius: 50%;
   background: #2563eb;
@@ -223,6 +232,7 @@ button.secondary:hover {
   margin-top: 16px;
   font-size: 0.85rem;
 }
+
 .sidebar-sources h5 {
   margin-bottom: 8px;
   font-weight: 600;
@@ -401,6 +411,7 @@ body.dark .detail-screen {
   background: #111827;
   color: #f9fafb;
   box-shadow: 0 12px 32px rgba(0,0,0,0.8);
+  max-width: calc(100vw + 300px);
 }
 body.dark .detail-top h2 {
   color: #f9fafb;

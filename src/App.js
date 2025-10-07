@@ -19,7 +19,7 @@ export default function App() {
   const prev = () => setIndex((i) => Math.max(i - 1, 0));
   const goTo = (i) => {
     setIndex(i);
-    setSidebarOpen(false);
+    setSidebarOpen(true);
     setShowDetail(false);
   };
 

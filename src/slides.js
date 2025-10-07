@@ -1,196 +1,406 @@
 // src/slides.js
+
+const slideColors = {
+  color1: "#2ECC71", // Juan José (verde)
+  color2: "#2768F5", // Danilo (azul)
+  color3: "#FFA500", // Juan Fernando (naranja)
+};
+
 const slides = [
+  // --- Introducción general ---
   {
     id: "intro",
-    title: "Computación Ubicua",
-    subtitle: "Evolución, ideas y aplicación",
+    title: "Conexiones inalámbricas",
+    subtitle: "Origen, evolución y propósito",
+    color: 3,
     body: (
-      <>
+      <div style={{ borderBottom: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
         <p>
-          Computación integrada en el entorno físico: sistemas que se vuelven
-          invisibles y están siempre disponibles para asistir al usuario.
+          Las conexiones inalámbricas surgieron de la necesidad humana de comunicarse y
+          transmitir información sin la limitación de cables físicos. Desde los primeros
+          experimentos de telegrafía sin hilos hasta la era moderna del Internet de las Cosas,
+          su evolución ha transformado por completo la interacción tecnológica.
         </p>
         <ul>
-          <li>Interacción continua entre persona y dispositivos.</li>
-          <li>Ejemplos: hogares inteligentes, wearables, ciudades conectadas.</li>
+          <li>Reducción de la dependencia de infraestructura física.</li>
+          <li>Movilidad y acceso ubicuo a la información.</li>
+          <li>Interconexión global de personas y dispositivos.</li>
         </ul>
-      </>
+      </div>
     ),
-    detailTitle: "Más sobre Computación Ubicua",
     detailBody: (
       <>
         <p>
-          La computación ubicua busca que la tecnología sea parte del entorno,
-          disminuyendo la fricción entre humanos y máquinas. Requiere diseño
-          centrado en privacidad, interoperabilidad y arquitectura distribuida.
+          La comunicación inalámbrica se basa en la transmisión de ondas electromagnéticas,
+          permitiendo enviar información por el aire. Su desarrollo se impulsó por la necesidad
+          militar, la expansión de las telecomunicaciones y, más recientemente, por la demanda
+          de conectividad universal.
         </p>
       </>
     ),
     sources: [
-      { label: "Weiser (1991) - Concepto seminal", href: "https://en.wikipedia.org/wiki/Mark_Weiser" }
+      { label: "IEEE History Center", href: "https://ethw.org/Wireless_Communication" }
     ],
   },
 
+  // --- Juan José ---
   {
-    id: "rfid",
-    title: "RFID (Radio-Frequency IDentification)",
-    subtitle: "Identificación y comunicación por campos electromagnéticos",
+    id: "rfid_iot",
+    title: "RFID e Internet de las Cosas (IoT)",
+    subtitle: "Identificación y conectividad inteligente",
+    color: 1,
     body: (
-      <>
+      <div style={{ borderBottom: `2px solid ${slideColors.color1}`, paddingBottom: "0.5rem" }}>
         <p>
-          Tecnología que usa campos electromagnéticos para identificar y, en
-          muchos casos, comunicar datos con etiquetas (tags) adheridas a
-          objetos.
+          RFID (Identificación por Radiofrecuencia) y IoT (Internet de las Cosas) se combinan
+          para crear sistemas automatizados capaces de registrar y procesar datos en tiempo real.
         </p>
         <ul>
-          <li>Lectura a distancia sin contacto ni línea de visión.</li>
-          <li>Usos: control de acceso, inventario, pagos contactless, rastreo.</li>
+          <li>RFID identifica objetos mediante ondas de radio sin contacto físico.</li>
+          <li>IoT permite que esos datos se integren en redes y plataformas conectadas.</li>
+          <li>Aplicación: sistemas de asistencia automatizados y monitoreo de personas u objetos.</li>
         </ul>
-      </>
+      </div>
     ),
-    detailTitle: "RFID — definición, tipos y módulos",
     detailBody: (
       <>
-        <h3>Componentes</h3>
+        <h3>Arquitectura de un sistema RFID-IoT</h3>
+        <p>Tarjeta RFID → Lector → Microcontrolador (ESP32) → WiFi → Servidor → App Móvil.</p>
+        <h3>Ventajas</h3>
         <ul>
-          <li><strong>Tag:</strong> etiqueta con identificador o datos.</li>
-          <li><strong>Lector (reader):</strong> envía interrogación y recibe respuesta.</li>
-          <li><strong>Antena:</strong> transmite/recibe señales.</li>
-          <li><strong>Software / middleware:</strong> procesa lecturas.</li>
+          <li>Registro automático y en tiempo real.</li>
+          <li>Sin errores manuales y acceso remoto.</li>
+          <li>Económico, escalable y con trazabilidad de datos.</li>
         </ul>
-
-        <h3>Tipos de tags (por alimentación)</h3>
-        <ul>
-          <li><strong>Pasivos:</strong> sin batería; obtienen energía del lector.</li>
-          <li><strong>Activos:</strong> con batería; transmiten por sí mismos.</li>
-          <li><strong>Semipasivos:</strong> batería para el circuito interno.</li>
-        </ul>
-
-        <h3>Por frecuencia</h3>
-        <ul>
-          <li><strong>LF (125–134 kHz):</strong> rango corto, atraviesa líquidos/algún metal.</li>
-          <li><strong>HF (13.56 MHz):</strong> corto/medio; incluye NFC (pagos, transporte).</li>
-          <li><strong>UHF (860–960 MHz):</strong> rango largo; logística/inventario (EPC Gen2).</li>
-        </ul>
-
-        <h3>Estándares importantes</h3>
-        <ul>
-          <li>ISO/IEC 14443 — tarjetas contactless (13.56 MHz).</li>
-          <li>ISO/IEC 15693 — HF de rango más largo.</li>
-          <li>EPC Gen2 / ISO 18000-6C — UHF para cadena de suministro.</li>
-        </ul>
-
-        <h3>Módulos lectores populares</h3>
-        <ul>
-          <li><strong>MFRC522 / RC522 (13.56 MHz):</strong> barato, ideal para hobby (NXP).</li>
-          <li><strong>PN532:</strong> controlador NFC más capaz (NXP).</li>
-          <li><strong>RDM6300 (125 kHz):</strong> módulos LF para sistemas legacy.</li>
-          <li><strong>Lectores UHF (Impinj, etc.):</strong> para tracking a distancia (industrial).</li>
-        </ul>
+        <h3>Aplicaciones</h3>
+        <p>Educación, empresas, gimnasios, transporte público y más.</p>
+              <img
+          src="/img/satelital.png"
+          alt="Diagrama de conectividad IoT Satelital"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
       </>
     ),
     sources: [
-      { label: "Impinj — categorías y tecnología RFID", href: "https://www.impinj.com/products/technology/how-can-rfid-systems-be-categorized" },
-      { label: "MFRC522 (datos) — NXP", href: "https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf" },
-      { label: "PN532 datasheet — NXP", href: "https://www.nxp.com/docs/en/data-sheet/PN532_C1.pdf" },
-      { label: "RDM6300 module", href: "https://www.handsontec.com/dataspecs/module/RDM6300.pdf" }
+      { label: "NXP RFID Solutions", href: "https://www.nxp.com/products/rfid-nfc" },
+    ],
+  },
+
+  // --- Danilo (Contenido del .docx) ---
+  {
+    id: "tecnologias_corto_alcance",
+    title: "Tecnologías de corto alcance",
+    subtitle: "WiFi, Bluetooth, Zigbee y Thread",
+    color: 2,
+    body: (
+      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+        <ul>
+          <li><strong>WiFi (IEEE 802.11):</strong> 50-100 m, alta velocidad, consumo elevado.</li>
+          <li><strong>Bluetooth/BLE:</strong> 1-100 m, bajo consumo, ideal para wearables.</li>
+          <li><strong>Zigbee:</strong> 10-100 m, muy bajo consumo, topología mesh.</li>
+          <li><strong>Thread/Matter:</strong> interoperabilidad para hogares inteligentes.</li>
+        </ul>
+      </div>
+    ),
+    detailBody: (
+      <>
+        <h3>WiFi para IoT</h3>
+        <p>
+          Utiliza estándares 802.11n/ac/ax con frecuencias 2.4, 5 y 6 GHz. Ideal para
+          dispositivos de alto rendimiento como cámaras IP y electrodomésticos conectados.
+        </p>
+        <h3>Bluetooth y BLE</h3>
+        <p>
+          Opera en 2.4 GHz con topologías punto a punto o malla. BLE optimiza consumo y
+          permite múltiples conexiones simultáneas.
+        </p>
+        <h3>Zigbee</h3>
+        <p>
+          Estándar IEEE 802.15.4 con red mesh autorreparable. Soporta hasta cientos de
+          dispositivos, ideal para automatización del hogar.
+        </p>
+              <img
+          src="/img/satelital.png"
+          alt="Diagrama de conectividad IoT Satelital"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+      </>
+    ),
+    sources: [
+      { label: "IEEE Xplore - Wireless Standards", href: "https://ieeexplore.ieee.org/" },
     ],
   },
 
   {
-    id: "casos",
-    title: "Casos de uso",
-    subtitle: "Aplicaciones reales",
+    id: "tecnologias_largo_alcance",
+    title: "Tecnologías de largo alcance",
+    subtitle: "LoRaWAN, Sigfox, NB-IoT, LTE-M",
+    color: 2,
     body: (
-      <>
-        <p>Ámbitos con impacto real:</p>
+      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
         <ul>
-          <li>Hogar inteligente: automatización contextual.</li>
-          <li>Salud wearable: monitoreo continuo y alertas.</li>
-          <li>Ciudades: sensores de tráfico, gestión, seguridad.</li>
+          <li><strong>LoRaWAN:</strong> 2–15 km urbano, 45 km rural, consumo muy bajo.</li>
+          <li><strong>Sigfox:</strong> hasta 50 km, muy bajo consumo, bajo ancho de banda.</li>
+          <li><strong>NB-IoT:</strong> cobertura extendida, ideal para medidores inteligentes.</li>
+          <li><strong>LTE-M:</strong> más rápido, compatible con redes LTE existentes.</li>
         </ul>
-      </>
+      </div>
     ),
-    detailTitle: "Casos de uso en detalle",
     detailBody: (
       <>
+        <h3>LoRaWAN</h3>
         <p>
-          Ejemplos prácticos: integración de sensores en infraestructuras
-          públicas para optimizar energía y servicios, wearables para
-          telemedicina, mantenimiento predictivo en industria.
+          Usa modulación LoRa (chirp spread spectrum). Arquitectura con nodos, gateways y
+          servidores de red. Ideal para agricultura inteligente y monitoreo ambiental.
         </p>
+        <h3>Sigfox</h3>
+        <p>
+          Red operada globalmente con modulación ultra narrow band. Extremadamente eficiente,
+          pero con limitaciones de datos.
+        </p>
+              <img
+          src="/img/satelital.png"
+          alt="Diagrama de conectividad IoT Satelital"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
       </>
     ),
-    sources: [],
+    sources: [
+      { label: "LoRa Alliance", href: "https://lora-alliance.org/" },
+      { label: "Sigfox Official", href: "https://www.sigfox.com/" }
+    ],
   },
 
   {
-    id: "retos",
-    title: "Retos y consideraciones",
-    subtitle: "Privacidad, seguridad y escalabilidad",
+    id: "protocolos_iot",
+    title: "Protocolos de comunicación IoT",
+    subtitle: "Capas, estructuras y ejemplos",
+    color: 2,
     body: (
-      <>
+      <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
         <ul>
-          <li>Privacidad y ética en datos ubicuos.</li>
-          <li>Superficies de ataque y seguridad.</li>
-          <li>Escalabilidad: edge vs cloud.</li>
-          <li>Interoperabilidad y estandarización.</li>
+          <li><strong>MQTT:</strong> Publish/Subscribe, ideal para telemetría.</li>
+          <li><strong>CoAP:</strong> REST sobre UDP, ligero y rápido.</li>
+          <li><strong>HTTP/HTTPS:</strong> estándar web para dispositivos potentes.</li>
+          <li><strong>WebSocket:</strong> conexión bidireccional persistente.</li>
         </ul>
+      </div>
+    ),
+    detailBody: (
+      <>
+        <h3>Modelo de capas IoT</h3>
+        <p>
+          Física (transmisión), Enlace (control de acceso), Red (IPv6/6LoWPAN), Transporte
+          (TCP/UDP) y Aplicación (MQTT, CoAP, HTTP). Cada capa optimiza eficiencia y seguridad.
+        </p>
+              <img
+          src="/img/satelital.png"
+          alt="Diagrama de conectividad IoT Satelital"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
       </>
     ),
-    detailTitle: "Retos principales",
+    sources: [
+      { label: "EMQX IoT Protocols", href: "https://www.emqx.com/en/blog/iot-protocols-mqtt-coap-lwm2m" }
+    ],
+  },
+
+  // --- Juan Fernando ---
+  {
+    id: "retos_seguridad",
+    title: "Retos y seguridad en redes inalámbricas",
+    subtitle: "Privacidad, autenticación y cifrado",
+    color: 3,
+    body: (
+      <div style={{ borderBottom: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
+        <ul>
+          <li>Autenticación segura (WPA3, certificados, PSK).</li>
+          <li>Cifrado de extremo a extremo (AES, TLS).</li>
+          <li>Gestión de claves y rotación periódica.</li>
+          <li>Mitigación de ataques en entornos IoT masivos.</li>
+        </ul>
+      </div>
+    ),
     detailBody: (
       <>
         <p>
-          Diseñar sistemas ubicuos seguros implica políticas de datos, cifrado,
-          autenticación y arquitectura distribuida que minimice la latencia.
+          Las redes inalámbricas deben equilibrar rendimiento y seguridad. Las vulnerabilidades
+          en cifrados débiles o dispositivos mal configurados pueden comprometer miles de nodos
+          interconectados.
         </p>
+              <img
+          src="/img/satelital.png"
+          alt="Diagrama de conectividad IoT Satelital"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
       </>
     ),
-    sources: [],
+    sources: [
+      { label: "Wi-Fi Alliance WPA3 Overview", href: "https://www.wi-fi.org/discover-wi-fi/security" },
+    ],
   },
 
   {
-    id: "conclusion",
+    id: "conclusion_final",
     title: "Conclusión",
-    subtitle: "Cierre y preguntas",
+    subtitle: "El futuro de la conectividad",
+    color: 3,
     body: (
+      <div style={{ borderBottom: `2px solid ${slideColors.color3}`, paddingBottom: "0.5rem" }}>
+        <p>
+          Las conexiones inalámbricas representan uno de los pilares del mundo digital moderno.
+          Desde la telegrafía hasta las redes satelitales, su evolución continúa impulsando la
+          sociedad hacia un entorno completamente interconectado.
+        </p>
+      </div>
+    ),
+    detailBody: (
       <>
         <p>
-          La computación ubicua es poderosa pero exige resolver privacidad,
-          seguridad y gobernanza tecnológica.
+          El futuro se orienta hacia redes autónomas, adaptativas y sostenibles, con inteligencia
+          artificial gestionando la comunicación entre millones de dispositivos. La conectividad
+          total ya no es un sueño: es una realidad en construcción.
         </p>
       </>
     ),
-    detailTitle: "Cierre",
-    detailBody: (
-      <>
-        <p>Proporciona una pregunta para discusión y caminos de investigación.</p>
-      </>
-    ),
-    sources: [],
+sources: [
+      { label: "IEEE Future Networks", href: "https://futurenetworks.ieee.org/" }
+    ],
   },
 
-    {
-    id: "conclusion",
-    title: "Conclusión",
-    subtitle: "Cierre y preguntas",
-    body: (
-      <>
-        <p>
-          La computación ubicua es poderosa pero exige resolver privacidad,
-          seguridad y gobernanza tecnológica.
-        </p>
-      </>
-    ),
-    detailTitle: "Cierre",
-    detailBody: (
-      <>
-        <p>Proporciona una pregunta para discusión y caminos de investigación.</p>
-      </>
-    ),
-    sources: [],
-  },
+{
+  id: "iot_satelital",
+  title: "IoT Satelital",
+  subtitle: "Conectividad global sin fronteras",
+  color: 2,
+  body: (
+    <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+      <p>
+        Las tecnologías IoT satelitales amplían la conectividad a zonas donde las redes
+        terrestres no alcanzan. Proveen cobertura global para aplicaciones críticas.
+      </p>
+      <ul>
+        <li><strong>Órbitas:</strong> LEO (Iridium, Swarm), GEO (Inmarsat, Thuraya).</li>
+        <li><strong>Cobertura:</strong> Total, incluyendo océanos y regiones polares.</li>
+        <li><strong>Latencia:</strong> 20–600 ms según órbita.</li>
+      </ul>
+    </div>
+  ),
+  detailBody: (
+    <>
+      <h3>Aplicaciones</h3>
+      <ul>
+        <li>Monitoreo marítimo y flotas pesqueras.</li>
+        <li>Infraestructura petrolera offshore.</li>
+        <li>Agricultura remota y comunicaciones de emergencia.</li>
+      </ul>
+      <img
+          src="/img/satelital.png"
+          alt="Diagrama de conectividad IoT Satelital"
+          style={{ width: "70%", marginTop: "1rem", borderRadius: "8px" }}
+        />
+    </>
+  ),
+  sources: [
+    { label: "Iridium Global Network", href: "https://www.iridium.com/" },
+    { label: "Inmarsat Official", href: "https://www.inmarsat.com/" },
+  ],
+},
+
+{
+  id: "protocolos_tecnologia",
+  title: "Protocolos específicos por tecnología",
+  subtitle: "Comunicación optimizada según el tipo de red",
+  color: 2,
+  body: (
+    <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+      <ul>
+        <li><strong>WiFi:</strong> WPA3, DHCP, TCP/IP, HTTP/HTTPS para transmisión directa.</li>
+        <li><strong>Bluetooth:</strong> GATT/GAP, L2CAP, ATT para conexión punto a punto.</li>
+        <li><strong>Zigbee:</strong> IEEE 802.15.4, red mesh con cifrado AES-128.</li>
+        <li><strong>LoRaWAN:</strong> LoRa PHY, MAC y cifrado end-to-end basado en AES.</li>
+        <li><strong>Sigfox:</strong> Protocolo propietario UNB (Ultra Narrow Band) de baja tasa.</li>
+      </ul>
+    </div>
+  ),
+  detailBody: (
+    <>
+      <p>
+        Cada tecnología inalámbrica utiliza protocolos adaptados a su propósito. 
+        WiFi y Bluetooth priorizan velocidad y compatibilidad, mientras Zigbee y LoRaWAN optimizan eficiencia energética y cobertura.
+      </p>
+      {/* espacio para imagen futura */}
+    </>
+  ),
+  sources: [
+    { label: "LoRaWAN Specification 1.1", href: "https://lora-alliance.org/resource-hub/lorawanr-specification-v11/" },
+    { label: "Bluetooth SIG Documentation", href: "https://www.bluetooth.com/specifications/specs/" },
+  ],
+},
+
+{
+  id: "gestion_dispositivos",
+  title: "Gestión y actualización de dispositivos IoT",
+  subtitle: "Mantenimiento, configuración y escalabilidad",
+  color: 2,
+  body: (
+    <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+      <ul>
+        <li><strong>OTA (Over-The-Air):</strong> permite actualizar firmware de forma remota.</li>
+        <li><strong>Comisionamiento:</strong> registro y autenticación de nuevos nodos.</li>
+        <li><strong>Monitorización:</strong> detección de fallos, consumo y conectividad.</li>
+        <li><strong>Gestión remota:</strong> configuración mediante dashboards o APIs.</li>
+      </ul>
+    </div>
+  ),
+  detailBody: (
+    <>
+      <p>
+        El mantenimiento OTA reduce costos y mejora la seguridad. Los dispositivos pueden 
+        recibir nuevas funciones o parches sin intervención física, lo que aumenta la vida útil de la red.
+      </p>
+      {/* espacio para imagen futura */}
+    </>
+  ),
+  sources: [
+    { label: "AWS IoT Device Management", href: "https://aws.amazon.com/iot-device-management/" },
+    { label: "Azure IoT Hub Documentation", href: "https://learn.microsoft.com/en-us/azure/iot-hub/" },
+  ],
+},
+
+{
+  id: "referencias_academicas",
+  title: "Referencias y fuentes técnicas",
+  subtitle: "Documentación y normativas de referencia",
+  color: 2,
+  body: (
+    <div style={{ borderBottom: `2px solid ${slideColors.color2}`, paddingBottom: "0.5rem" }}>
+      <ul>
+        <li>IEEE 802.11, 802.15.4, 802.16 — Estándares base de comunicación inalámbrica.</li>
+        <li>IETF RFC 7252 — CoAP Protocol.</li>
+        <li>LoRa Alliance — Especificaciones y certificaciones globales.</li>
+        <li>Bluetooth SIG — Documentación oficial GATT, GAP, L2CAP.</li>
+        <li>ETSI — Normativas europeas para espectro y seguridad IoT.</li>
+      </ul>
+    </div>
+  ),
+  detailBody: (
+    <>
+      <p>
+        Las organizaciones internacionales como IEEE, IETF y LoRa Alliance definen las bases 
+        técnicas y de seguridad de las redes IoT, garantizando interoperabilidad y confiabilidad global.
+      </p>
+      {/* espacio para imagen futura */}
+    </>
+  ),
+  sources: [
+    { label: "IEEE Standards Association", href: "https://standards.ieee.org/" },
+    { label: "IETF CoAP RFC 7252", href: "https://datatracker.ietf.org/doc/html/rfc7252" },
+  ],
+},
+
+
+
 ];
 
 export default slides;
